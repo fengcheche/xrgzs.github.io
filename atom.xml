@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>潇然工作室</title>
+  
+  <subtitle>潇洒自然</subtitle>
+  <link href="https://xrgzs.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://xrgzs.github.io/"/>
+  <updated>2023-07-12T14:33:16.782Z</updated>
+  <id>https://xrgzs.github.io/</id>
+  
+  <author>
+    <name>狂犬主子</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>潇然系统 Xiaoran System</title>
+    <link href="https://xrgzs.github.io/xrsys.html"/>
+    <id>https://xrgzs.github.io/xrsys.html</id>
+    <published>2023-07-13T02:27:47.000Z</published>
+    <updated>2023-07-12T14:33:16.782Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;潇然系统-Xiaoran-System-官方文档&quot;&gt;&lt;a href=&quot;#潇然系统-Xiaoran-System-官方文档&quot; class=&quot;headerlink&quot; title=&quot;潇然系统 Xiaoran System 官方文档&quot;&gt;&lt;/a&gt;潇然系统 Xiaoran</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
+    
+    <category term="潇然系统" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Xiaoran System" scheme="https://xrgzs.github.io/tags/xiaoran-system/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>潇然一键装机助理 Xiaoran Onekey</title>
+    <link href="https://xrgzs.github.io/xrok.html"/>
+    <id>https://xrgzs.github.io/xrok.html</id>
+    <published>2023-07-09T11:30:38.000Z</published>
+    <updated>2023-07-14T11:06:45.370Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;潇然一键装机助理-Xiaoran-Onekey&quot;&gt;&lt;a href=&quot;#潇然一键装机助理-Xiaoran-Onekey&quot; class=&quot;headerlink&quot; title=&quot;潇然一键装机助理 Xiaoran Onekey&quot;&gt;&lt;/a&gt;潇然一键装机助理 Xiaoran</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
+    
+    <category term="潇然系统" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Xiaoran System" scheme="https://xrgzs.github.io/tags/xiaoran-system/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="潇然一键装机助理" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E4%B8%80%E9%94%AE%E8%A3%85%E6%9C%BA%E5%8A%A9%E7%90%86/"/>
+    
+    <category term="Xiaoran Onekey" scheme="https://xrgzs.github.io/tags/xiaoran-onekey/"/>
+    
+    <category term="系统安装" scheme="https://xrgzs.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>潇然PE启动 Xiaoran PE</title>
+    <link href="https://xrgzs.github.io/xrpe.html"/>
+    <id>https://xrgzs.github.io/xrpe.html</id>
+    <published>2023-07-08T10:30:40.000Z</published>
+    <updated>2023-07-08T13:25:28.581Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;潇然PE启动-Xiaoran-PE&quot;&gt;&lt;a href=&quot;#潇然PE启动-Xiaoran-PE&quot; class=&quot;headerlink&quot; title=&quot;潇然PE启动 Xiaoran PE&quot;&gt;&lt;/a&gt;潇然PE启动 Xiaoran</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
+    
+    <category term="潇然系统" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Xiaoran System" scheme="https://xrgzs.github.io/tags/xiaoran-system/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="WinPE" scheme="https://xrgzs.github.io/tags/winpe/"/>
+    
+    <category term="Xiaoran PE" scheme="https://xrgzs.github.io/tags/xiaoran-pe/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Proxmox VE 常用命令整理</title>
+    <link href="https://xrgzs.github.io/posts/pve-cmd.html"/>
+    <id>https://xrgzs.github.io/posts/pve-cmd.html</id>
+    <published>2023-05-13T12:03:21.000Z</published>
+    <updated>2023-07-14T05:23:23.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Proxmox-VE（PVE）常用命令整理&quot;&gt;&lt;a href=&quot;#Proxmox-VE（PVE）常用命令整理&quot; class=&quot;headerlink&quot; title=&quot;Proxmox VE（PVE）常用命令整理&quot;&gt;&lt;/a&gt;Proxmox</summary>
+        
+      
+    
+    
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
+    
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="Debian" scheme="https://xrgzs.github.io/tags/debian/"/>
+    
+    <category term="Proxmox VE" scheme="https://xrgzs.github.io/tags/proxmox-ve/"/>
+    
+    <category term="PVE" scheme="https://xrgzs.github.io/tags/pve/"/>
+    
+    <category term="虚拟机" scheme="https://xrgzs.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    <category term="虚拟化" scheme="https://xrgzs.github.io/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arch Linux 安装</title>
+    <link href="https://xrgzs.github.io/posts/arch-linux-install.html"/>
+    <id>https://xrgzs.github.io/posts/arch-linux-install.html</id>
+    <published>2023-05-02T06:01:24.000Z</published>
+    <updated>2023-05-09T09:04:34.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Arch-Linux-安装&quot;&gt;&lt;a href=&quot;#Arch-Linux-安装&quot; class=&quot;headerlink&quot; title=&quot;Arch Linux 安装&quot;&gt;&lt;/a&gt;Arch Linux</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/categories/linux/"/>
+    
+    
+    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
+    
+    <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[转载]小慢哥IPv6系列</title>
+    <link href="https://xrgzs.github.io/posts/fzxiaomange-ipv6.html"/>
+    <id>https://xrgzs.github.io/posts/fzxiaomange-ipv6.html</id>
+    <published>2023-04-19T07:33:00.000Z</published>
+    <updated>2023-04-19T16:14:21.476Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;原文：&lt;a href=&quot;https://www.zhihu.com/column/fzxiaomange&quot;&gt;https://www.zhihu.com/column/fzxiaomange&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;IPv6系列-入门指南&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="网络" scheme="https://xrgzs.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="IPv6" scheme="https://xrgzs.github.io/tags/ipv6/"/>
+    
+    <category term="DHCPv6" scheme="https://xrgzs.github.io/tags/dhcpv6/"/>
+    
+    <category term="SLAAC" scheme="https://xrgzs.github.io/tags/slaac/"/>
+    
+    <category term="网络协议" scheme="https://xrgzs.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+    <category term="IP地址" scheme="https://xrgzs.github.io/tags/ip%E5%9C%B0%E5%9D%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>17种字体的官方下载链接</title>
+    <link href="https://xrgzs.github.io/posts/font-commonly-used-download.html"/>
+    <id>https://xrgzs.github.io/posts/font-commonly-used-download.html</id>
+    <published>2023-04-19T05:33:56.000Z</published>
+    <updated>2023-05-01T20:28:58.849Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;17种字体的官方下载链接&quot;&gt;&lt;a href=&quot;#17种字体的官方下载链接&quot; class=&quot;headerlink&quot; title=&quot;17种字体的官方下载链接&quot;&gt;&lt;/a&gt;17种字体的官方下载链接&lt;/h1&gt;&lt;p&gt;视频字幕设计专用，转自&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="办公技巧" scheme="https://xrgzs.github.io/categories/%E5%8A%9E%E5%85%AC%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="视频剪辑" scheme="https://xrgzs.github.io/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    
+    <category term="视频制作" scheme="https://xrgzs.github.io/tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C/"/>
+    
+    <category term="字幕" scheme="https://xrgzs.github.io/tags/%E5%AD%97%E5%B9%95/"/>
+    
+    <category term="设计" scheme="https://xrgzs.github.io/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="字体" scheme="https://xrgzs.github.io/tags/%E5%AD%97%E4%BD%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS</title>
+    <link href="https://xrgzs.github.io/posts/lucky-stun-upnp-nat1.html"/>
+    <id>https://xrgzs.github.io/posts/lucky-stun-upnp-nat1.html</id>
+    <published>2023-04-04T15:47:13.000Z</published>
+    <updated>2023-05-21T12:31:01.059Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS&quot;&gt;&lt;a href=&quot;#使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络" scheme="https://xrgzs.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="Alist" scheme="https://xrgzs.github.io/tags/alist/"/>
+    
+    <category term="NAT" scheme="https://xrgzs.github.io/tags/nat/"/>
+    
+    <category term="Docker" scheme="https://xrgzs.github.io/tags/docker/"/>
+    
+    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
+    
+    <category term="DSM" scheme="https://xrgzs.github.io/tags/dsm/"/>
+    
+    <category term="Lucky" scheme="https://xrgzs.github.io/tags/lucky/"/>
+    
+    <category term="OpenWrt" scheme="https://xrgzs.github.io/tags/openwrt/"/>
+    
+    <category term="打洞技术" scheme="https://xrgzs.github.io/tags/%E6%89%93%E6%B4%9E%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="内网穿透" scheme="https://xrgzs.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+    <category term="UPNP" scheme="https://xrgzs.github.io/tags/upnp/"/>
+    
+    <category term="FullCone NAT" scheme="https://xrgzs.github.io/tags/fullcone-nat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>希沃鸿合文香一体机OPS电脑原厂预装教育系统镜像ESD打包封装驱动程序下载恢复盘构建</title>
+    <link href="https://xrgzs.github.io/eduimg.html"/>
+    <id>https://xrgzs.github.io/eduimg.html</id>
+    <published>2023-03-25T10:33:26.000Z</published>
+    <updated>2023-05-30T17:54:53.592Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img06.mifile.cn/v1/MI_542ED8B1722DC/6a11c9dd1844f9aba6a323420b8f5341.jpg&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;交互式智能平板PC模块系统镜像合集&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/"/>
+    
+    
+    <category term="SEEWO" scheme="https://xrgzs.github.io/tags/seewo/"/>
+    
+    <category term="一体机" scheme="https://xrgzs.github.io/tags/%E4%B8%80%E4%BD%93%E6%9C%BA/"/>
+    
+    <category term="希沃" scheme="https://xrgzs.github.io/tags/%E5%B8%8C%E6%B2%83/"/>
+    
+    <category term="MAXHUB" scheme="https://xrgzs.github.io/tags/maxhub/"/>
+    
+    <category term="鸿合" scheme="https://xrgzs.github.io/tags/%E9%B8%BF%E5%90%88/"/>
+    
+    <category term="HiteVision" scheme="https://xrgzs.github.io/tags/hitevision/"/>
+    
+    <category term="文香" scheme="https://xrgzs.github.io/tags/%E6%96%87%E9%A6%99/"/>
+    
+    <category term="电子白板" scheme="https://xrgzs.github.io/tags/%E7%94%B5%E5%AD%90%E7%99%BD%E6%9D%BF/"/>
+    
+    <category term="希沃白板" scheme="https://xrgzs.github.io/tags/%E5%B8%8C%E6%B2%83%E7%99%BD%E6%9D%BF/"/>
+    
+    <category term="鸿合i学" scheme="https://xrgzs.github.io/tags/%E9%B8%BF%E5%90%88i%E5%AD%A6/"/>
+    
+    <category term="鸿合白板" scheme="https://xrgzs.github.io/tags/%E9%B8%BF%E5%90%88%E7%99%BD%E6%9D%BF/"/>
+    
+    <category term="系统镜像" scheme="https://xrgzs.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/"/>
+    
+    <category term="原厂系统" scheme="https://xrgzs.github.io/tags/%E5%8E%9F%E5%8E%82%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="恢复盘" scheme="https://xrgzs.github.io/tags/%E6%81%A2%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>潇然系统镜像构建教程</title>
+    <link href="https://xrgzs.github.io/posts/xrsys-build-image.html"/>
+    <id>https://xrgzs.github.io/posts/xrsys-build-image.html</id>
+    <published>2023-03-24T09:33:46.000Z</published>
+    <updated>2023-05-21T12:13:07.171Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;潇然系统镜像构建教程&quot;&gt;&lt;a href=&quot;#潇然系统镜像构建教程&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
+    
+    <category term="潇然系统" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Xiaoran System" scheme="https://xrgzs.github.io/tags/xiaoran-system/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6</title>
+    <link href="https://xrgzs.github.io/posts/openwrt-istoreos-x-wrt-config-ipv6-nat6.html"/>
+    <id>https://xrgzs.github.io/posts/openwrt-istoreos-x-wrt-config-ipv6-nat6.html</id>
+    <published>2023-03-16T15:47:13.000Z</published>
+    <updated>2023-04-26T10:40:16.997Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OpenWrt-iStoreOS-X-WRT-配置-IPv6-NAT6&quot;&gt;&lt;a href=&quot;#OpenWrt-iStoreOS-X-WRT-配置-IPv6-NAT6&quot; class=&quot;headerlink&quot; title=&quot;OpenWrt iStoreOS</summary>
+        
+      
+    
+    
+    
+    <category term="网络" scheme="https://xrgzs.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="IPv6" scheme="https://xrgzs.github.io/tags/ipv6/"/>
+    
+    <category term="OpenWrt" scheme="https://xrgzs.github.io/tags/openwrt/"/>
+    
+    <category term="iStoreOS" scheme="https://xrgzs.github.io/tags/istoreos/"/>
+    
+    <category term="X-WRT" scheme="https://xrgzs.github.io/tags/x-wrt/"/>
+    
+    <category term="NAT6" scheme="https://xrgzs.github.io/tags/nat6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>某盒子汁源</title>
+    <link href="https://xrgzs.github.io/posts/tvbox.html"/>
+    <id>https://xrgzs.github.io/posts/tvbox.html</id>
+    <published>2023-03-16T11:46:38.000Z</published>
+    <updated>2023-07-11T14:06:13.359Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;某电视盒子资源&quot;&gt;&lt;a href=&quot;#某电视盒子资源&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="资源" scheme="https://xrgzs.github.io/categories/%E8%B5%84%E6%BA%90/"/>
+    
+    
+    <category term="资源" scheme="https://xrgzs.github.io/tags/%E8%B5%84%E6%BA%90/"/>
+    
+    <category term="影视" scheme="https://xrgzs.github.io/tags/%E5%BD%B1%E8%A7%86/"/>
+    
+    <category term="影音" scheme="https://xrgzs.github.io/tags/%E5%BD%B1%E9%9F%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu/Debian 设置 IPv4 优先</title>
+    <link href="https://xrgzs.github.io/posts/debian-set-ipv4-first.html"/>
+    <id>https://xrgzs.github.io/posts/debian-set-ipv4-first.html</id>
+    <published>2023-03-01T16:18:56.000Z</published>
+    <updated>2023-04-19T15:40:41.970Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Ubuntu-x2F-Debian-设置-IPv4-优先，解决-IPv6-云主机-安装-Alist-报错-TLS-握手失败&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="服务器" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="网络" scheme="https://xrgzs.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="IPv6" scheme="https://xrgzs.github.io/tags/ipv6/"/>
+    
+    <category term="Ubuntu" scheme="https://xrgzs.github.io/tags/ubuntu/"/>
+    
+    <category term="Debian" scheme="https://xrgzs.github.io/tags/debian/"/>
+    
+    <category term="Alist" scheme="https://xrgzs.github.io/tags/alist/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>潇然工作室 Xiaoran Studio</title>
+    <link href="https://xrgzs.github.io/xrgzs.html"/>
+    <id>https://xrgzs.github.io/xrgzs.html</id>
+    <published>2023-03-01T01:27:18.000Z</published>
+    <updated>2023-06-18T05:56:35.682Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://m.360buyimg.com/babel/jfs/t1/122493/5/31571/42364/6400bf05F27a93c6d/b2d57deac2b077ac.jpg&quot;&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 7 非 LVM 硬盘简单扩容</title>
+    <link href="https://xrgzs.github.io/posts/centos-7-not-lvm-extend.html"/>
+    <id>https://xrgzs.github.io/posts/centos-7-not-lvm-extend.html</id>
+    <published>2023-02-25T21:03:41.000Z</published>
+    <updated>2023-05-01T20:26:14.439Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CentOS-7-非-LVM-硬盘简单扩容&quot;&gt;&lt;a href=&quot;#CentOS-7-非-LVM-硬盘简单扩容&quot; class=&quot;headerlink&quot; title=&quot;CentOS 7 非 LVM 硬盘简单扩容&quot;&gt;&lt;/a&gt;CentOS 7 非 LVM</summary>
+        
+      
+    
+    
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
+    
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
+    
+    <category term="硬盘扩容" scheme="https://xrgzs.github.io/tags/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
+    
+    <category term="xfs" scheme="https://xrgzs.github.io/tags/xfs/"/>
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora 配置 API 图床</title>
+    <link href="https://xrgzs.github.io/posts/typora-config-api-picgo.html"/>
+    <id>https://xrgzs.github.io/posts/typora-config-api-picgo.html</id>
+    <published>2023-01-30T10:49:08.000Z</published>
+    <updated>2023-05-10T02:37:58.496Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Typora-配置-API-图床&quot;&gt;&lt;a href=&quot;#Typora-配置-API-图床&quot; class=&quot;headerlink&quot; title=&quot;Typora 配置 API 图床&quot;&gt;&lt;/a&gt;Typora 配置 API 图床&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/windows/"/>
+    
+    
+    <category term="Typora" scheme="https://xrgzs.github.io/tags/typora/"/>
+    
+    <category term="PicGo" scheme="https://xrgzs.github.io/tags/picgo/"/>
+    
+    <category term="Markdown" scheme="https://xrgzs.github.io/tags/markdown/"/>
+    
+    <category term="图床" scheme="https://xrgzs.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS Linux 解决证书过期问题</title>
+    <link href="https://xrgzs.github.io/posts/centos-linux-fix-ca.html"/>
+    <id>https://xrgzs.github.io/posts/centos-linux-fix-ca.html</id>
+    <published>2023-01-30T09:34:23.000Z</published>
+    <updated>2023-05-01T20:26:38.637Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CentOS-Linux-解决证书过期问题&quot;&gt;&lt;a href=&quot;#CentOS-Linux-解决证书过期问题&quot; class=&quot;headerlink&quot; title=&quot;CentOS Linux 解决证书过期问题&quot;&gt;&lt;/a&gt;CentOS Linux</summary>
+        
+      
+    
+    
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
+    
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="证书" scheme="https://xrgzs.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
+    
+    <category term="curl" scheme="https://xrgzs.github.io/tags/curl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typecho 使用 MathJax 添加对 LaTeX 数学公式的支持</title>
+    <link href="https://xrgzs.github.io/posts/typecho-use-mathjax-add-latex-support.html"/>
+    <id>https://xrgzs.github.io/posts/typecho-use-mathjax-add-latex-support.html</id>
+    <published>2022-08-08T13:40:34.000Z</published>
+    <updated>2023-04-19T15:42:13.305Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://m.360buyimg.com/babel/jfs/t1/94195/21/35873/2471122/63ff7fabF530b1f16/d86683d9e8bb485c.png&quot;&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/windows/"/>
+    
+    
+    <category term="Typecho" scheme="https://xrgzs.github.io/tags/typecho/"/>
+    
+    <category term="MathJax" scheme="https://xrgzs.github.io/tags/mathjax/"/>
+    
+    <category term="建站" scheme="https://xrgzs.github.io/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="网站" scheme="https://xrgzs.github.io/tags/%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="LaTeX" scheme="https://xrgzs.github.io/tags/latex/"/>
+    
+    <category term="数学" scheme="https://xrgzs.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="代码" scheme="https://xrgzs.github.io/tags/%E4%BB%A3%E7%A0%81/"/>
+    
+    <category term="公式" scheme="https://xrgzs.github.io/tags/%E5%85%AC%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网页去广告插件及规则脚本下载</title>
+    <link href="https://xrgzs.github.io/xrnoad.html"/>
+    <id>https://xrgzs.github.io/xrnoad.html</id>
+    <published>2022-05-11T16:16:17.000Z</published>
+    <updated>2023-05-24T04:36:23.178Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://m.360buyimg.com/babel/jfs/t1/85521/25/35957/585977/63ff81acFee2ea5d3/20d4fa359a87dac1.png&quot;&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    
+    <category term="去广告" scheme="https://xrgzs.github.io/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
+    
+    <category term="浏览器插件" scheme="https://xrgzs.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="VIP" scheme="https://xrgzs.github.io/tags/vip/"/>
+    
+    <category term="油猴" scheme="https://xrgzs.github.io/tags/%E6%B2%B9%E7%8C%B4/"/>
+    
+    <category term="脚本" scheme="https://xrgzs.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+    <category term="规则" scheme="https://xrgzs.github.io/tags/%E8%A7%84%E5%88%99/"/>
+    
+    <category term="adblock" scheme="https://xrgzs.github.io/tags/adblock/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国内杀毒软件推荐</title>
+    <link href="https://xrgzs.github.io/posts/chinese-antivirus-soft-recommend.html"/>
+    <id>https://xrgzs.github.io/posts/chinese-antivirus-soft-recommend.html</id>
+    <published>2021-03-14T14:33:46.000Z</published>
+    <updated>2023-05-02T07:47:54.082Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://p1.meituan.net/dpplatform/934272aac51c5cd4e8ea144615e42dc82083416.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;综合评价&quot;&gt;&lt;a href=&quot;#综合评价&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/windows/"/>
+    
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="安全" scheme="https://xrgzs.github.io/tags/%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="杀毒" scheme="https://xrgzs.github.io/tags/%E6%9D%80%E6%AF%92/"/>
+    
+    <category term="软件" scheme="https://xrgzs.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="推荐" scheme="https://xrgzs.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="360" scheme="https://xrgzs.github.io/tags/360/"/>
+    
+    <category term="火绒" scheme="https://xrgzs.github.io/tags/%E7%81%AB%E7%BB%92/"/>
+    
+    <category term="电脑管家" scheme="https://xrgzs.github.io/tags/%E7%94%B5%E8%84%91%E7%AE%A1%E5%AE%B6/"/>
+    
+  </entry>
+  
+</feed>

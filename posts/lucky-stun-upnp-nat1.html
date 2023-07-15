@@ -1,0 +1,1422 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="NAT,Docker,群晖,DSM,Lucky,OpenWrt,打洞技术,内网穿透,UPNP,FullCone NAT,Alist">
+    <meta name="description" content="群晖docker安装配置Lucky的STUN穿透利用UPNP和NAT1在公网打洞">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS | 潇然工作室</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"3EkoIokEjoCIrHFE",ck:"3EkoIokEjoCIrHFE",autoTrack:true})</script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="潇然工作室" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">潇然工作室</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/">
+          
+          <i class="fas fa-home" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>首页</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>关于</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xrsys.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-ghost" style="zoom: 0.6;"></i>
+      
+      <span>系统</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xrok.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-sync" style="zoom: 0.6;"></i>
+      
+      <span>装机助理</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">潇然工作室</div>
+        <div class="logo-desc">
+            
+            分享网络知识。潇洒自然 - 潇然工作室 - Xiaoran Studio - 狂犬主子
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-home" style="position: absolute;left:50px" ></i>
+			      
+		          <span>首页</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>关于</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xrsys.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-ghost"></i>
+			
+			系统
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xrok.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-sync"></i>
+			
+			装机助理
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img07.mifile.cn/v1/MI_542ED8B1722DC/c40c1c250982c42c339bb0212f10ad1c.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/alist/">
+                                <span class="chip bg-color">Alist</span>
+                            </a>
+                        
+                            <a href="/tags/nat/">
+                                <span class="chip bg-color">NAT</span>
+                            </a>
+                        
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BE%A4%E6%99%96/">
+                                <span class="chip bg-color">群晖</span>
+                            </a>
+                        
+                            <a href="/tags/dsm/">
+                                <span class="chip bg-color">DSM</span>
+                            </a>
+                        
+                            <a href="/tags/lucky/">
+                                <span class="chip bg-color">Lucky</span>
+                            </a>
+                        
+                            <a href="/tags/openwrt/">
+                                <span class="chip bg-color">OpenWrt</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%89%93%E6%B4%9E%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">打洞技术</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+                                <span class="chip bg-color">内网穿透</span>
+                            </a>
+                        
+                            <a href="/tags/upnp/">
+                                <span class="chip bg-color">UPNP</span>
+                            </a>
+                        
+                            <a href="/tags/fullcone-nat/">
+                                <span class="chip bg-color">FullCone NAT</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BD%91%E7%BB%9C/" class="post-category">
+                                网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-04
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-05-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS"><a href="#使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS" class="headerlink" title="使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS"></a>使用Lucky的STUN内网穿透利用UPNP和NAT1在公网打洞并配置伪DDNS</h1><h2 id="背景-x2F-需求"><a href="#背景-x2F-需求" class="headerlink" title="背景&#x2F;需求"></a>背景&#x2F;需求</h2><p>我的要求很简单，就是在外网访问家里NAS服务器上的文件，实现远程办公</p>
+<p>这时候有人会说，简单嘛，要个公网IP不就行了</p>
+<p>好，下面就是本人办过的宽带和要公网IP的经历：</p>
+<p>电信宽带，有公网IPv6地址，至于公网IPv4地址，我要不到</p>
+<p>联通宽带，有公网IPv6地址，至于公网IPv4地址，听说很容易要到，不过我没有联通宽带</p>
+<p>移动宽带，有公网IPv6地址，至于IPv4是不是公网，懂得都懂，目前我正在用</p>
+<p>4G、5G网络，有公网IPv6地址，至于IPv4是不是公网，想都别想</p>
+<blockquote>
+<p>补充一些小常识：</p>
+<p>公网IPv4地址可以通过NAT网关实现网络地址转换分配给多个设备，这个网关设备就是路由器，通过路由器上端口映射、端口转发或DMZ主机等功能，即可通过ip+端口或域名+端口的形式，访问内网的设备</p>
+<p>公网IPv6地址不用解释，由于数量多，可以不用NAT技术来解决地址数量问题（当然也是可以NAT的，具体看这篇文章：<a target="_blank" rel="noopener" href="https://www.xrgzs.top/posts/openwrt-istoreos-x-wrt-config-ipv6-nat6.html">《OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6》</a>），缺点就是IPv6目前没有做到全面覆盖（未来也不可能做到），IPv4 Only网络下访问局域网设备非常头疼，此外IPv6地址也是难记得要命</p>
+<p>当然，对于80、443端口，即HTTP、HTTPS默认服务端口，可以配置虚拟主机，实现一个端口绑定多个域名</p>
+</blockquote>
+<h2 id="不同方案及网络原理"><a href="#不同方案及网络原理" class="headerlink" title="不同方案及网络原理"></a>不同方案及网络原理</h2><p>远程访问家用设备（NAS等）的方法对比：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/431090794">https://zhuanlan.zhihu.com/p/431090794</a></p>
+<p>说到内网穿透，即网络打洞，实际上有很多种方案，如花生壳、frp等基于端口映射的方案，这些方案本人都尝试过，对于今天这篇文章，存在以下几个问题：</p>
+<ul>
+<li>需要一台有公网IPv4服务器做端口转发</li>
+<li>费用高昂，普通用户没必要</li>
+<li>配置复杂，超出知识范围</li>
+<li>速度慢，受限于公网IPv4服务器流量和带宽</li>
+<li>延迟高，每次连接都需要经过公网IPv4服务器中转</li>
+</ul>
+<p>基于以上问题，本人一直在查找方案，经朋友推荐，了解到了一款软硬路由公网神器——Lucky(大吉)</p>
+<p>项目地址：</p>
+<p><a target="_blank" rel="noopener" href="https://lucky666.cn/">https://lucky666.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gdy666/lucky">https://github.com/gdy666/lucky</a></p>
+<h3 id="NAT是什么？"><a href="#NAT是什么？" class="headerlink" title="NAT是什么？"></a>NAT是什么？</h3><p>NAT（Network Address Translation）网络地址转换</p>
+<h3 id="打洞原理"><a href="#打洞原理" class="headerlink" title="打洞原理"></a>打洞原理</h3><p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/185100/7/33724/169451/642b0afeFab8c2db5/0d55f1985ff6b59b.png"></p>
+<p><em>图源自natter</em></p>
+<p>这种STUN（Session Traversal Utilities for NAT，NAT会话穿越应用程序）内网穿透技术，可以帮助解决因NAT技术所带来的网络连接问题</p>
+<p>STUN技术允许NAT1用户获取公网端口，通过路由端口转发或者LUCKY内置转发，将内网服务端口暴露到外网，从而实现内网穿透的目的</p>
+<p>这个技术有以下几个好处：</p>
+<ul>
+<li>不需要一台有公网IPv4服务器做端口转发</li>
+<li>无需付费，最多就是购买个域名</li>
+<li>配置简单，最多浏览器F12抓抓包</li>
+<li>速度快，受限于你宽带的上传带宽</li>
+<li>延迟低，和你游戏联机的技术一样</li>
+</ul>
+<p>不过也有一些缺点：</p>
+<ul>
+<li>访问地址不固定，穿透后端口千变万化</li>
+<li>无法DDNS，DNS无法设置解析</li>
+<li>稳定性未知，保活比较难做</li>
+</ul>
+<p>对于前两点，可以配合WebHook调用相关API，搭配Cloudflare的页面规则或YOURLS进行301&#x2F;302跳转，可以近似实现DDNS的功能</p>
+<h2 id="使用经历"><a href="#使用经历" class="headerlink" title="使用经历"></a>使用经历</h2><p>不过一开始以为是OpenWrt路由专用，我手上又没OpenWrt设备，就不打算试</p>
+<p><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8267181-1-1.html">https://www.right.com.cn/forum/thread-8267181-1-1.html</a></p>
+<p>听说可以实现另一种形式的内网穿透，本人非常激动，然后就看了看与它相关项目Natter，在Windows下用Python试了试没有成功，说有防火墙（实际没有）和没有权限。研究了一下文档，发现在DDNS的实现上还有问题，就放弃了</p>
+<p>Natter：<a target="_blank" rel="noopener" href="https://github.com/MikeWang000000/Natter">https://github.com/MikeWang000000/Natter</a><br>NATMap：<a target="_blank" rel="noopener" href="https://github.com/heiher/natmap">https://github.com/heiher/natmap</a></p>
+<p>后来了解到Lucky可以在Docker中运行，甚至能直接跑在Windows上，就在群晖的Docker上试着搭建了一下，发现正好满足了我对于内网穿透的要求</p>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>为了能打洞成功，需要保证你的宽带默认为FullCone NAT（全锥型NAT，NAT1），如果为您的宽带为对称性NAT，那么不好意思，本方法不适合您</p>
+<p>此方法的原理类似PCDN，各大运营商都在大力打击，中国移动将在2023年5月对网络进行大整改，将原先的NAT1改为NAT4，所以无法使用此方法穿透，解决方法就是换一家运营商</p>
+<h2 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h2><blockquote>
+<p><strong>推荐方案：</strong><br>光猫设置桥接模式，在路由器系统如 OpenWRT 上直接运行 LUCKY（仅经过一层 NAT）</p>
+<p><strong>可行方案：</strong><br>在子网中的主机上运行 LUCKY，在光猫或路由器上对其开启 DMZ 功能，或对需要开放的端口设置端口转发（手动或UPNP）。（经过多层NAT）</p>
+</blockquote>
+<p>首先声明，我的网络是光猫桥接，爱快软路由拨号</p>
+<p><img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/59408c54d7f720cfcf09f615d36334b2.png"></p>
+<p>如果你是光猫拨号，请想办法联系客服解决，如果无法解决，请自行百度</p>
+<p>大多数的路由器默认使用NAT4以保障安全，如果改为NAT1（通常不支持），理论上可以不用开启UPNP，NAT4是要必须开启UPNP的，所以，最好开启UPNP</p>
+<p>最主要的是要保证UPNP能用，否则非常麻烦</p>
+<blockquote>
+<p><strong>STUN穿透环境要求</strong></p>
+<p>STUN技术的实现需要一些前提条件和环境要求。在使用STUN穿透功能之前，需要确保路由器、光猫等网络设备的设置和网络环境都符合要求。</p>
+<ol>
+<li>光猫拨号的情况下你需要在光猫后台设置DMZ指向路由器。(路由器拨号的跳过这一步)</li>
+<li>建议使用STUN穿透功能的用户将LUCKY运行在主路由上面，如果LUCKY运行在局域网局域网内,以下三种设置方法任选一种<ol>
+<li>你需要在路由器设置DMZ指向LUCKY所在的局域网IP,</li>
+<li>在路由器端设置 <em><strong>穿透通道监听端口</strong></em> 指向LUCKY内网IP同样的 <em><strong>穿透通道监听端口</strong></em>,注意前后这两个端口的数组一定要设置是同样的。</li>
+<li>开启路由器端口的UPNP功能。</li>
+</ol>
+</li>
+<li>上面第二条的方法是只针对使用Lucky内置转发功能的设置，如果你没有使用Lucky内置转发，可以忽略第二条。</li>
+</ol>
+</blockquote>
+<p>开启路由器的UPNP功能：</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/141539/38/34653/78139/642b0c02Fd84393c9/a2e03551506e6c79.png"></p>
+<h2 id="安装Lucky"><a href="#安装Lucky" class="headerlink" title="安装Lucky"></a>安装Lucky</h2><p>对于 OpenWrt ，这里不再重复，请看官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://lucky666.cn/docs/install">https://lucky666.cn/docs/install</a></p>
+<p><strong>这里采用群晖Docker安装，注意以下配置：</strong></p>
+<p>使用Host网络：</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/97988/22/21328/5526/642b0000F57154094/45cb59a725cadf19.png"></p>
+<p>启用自动重新启动：</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/219997/27/24545/2092/642affcaF1f37b12e/12d0e460ee5edc86.png"></p>
+<p>映射存储空间位置：</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/177030/3/34225/7684/642b0033F6eb3e88c/1735be1b2bfa6aa2.png"></p>
+<p>访问http:&#x2F;&#x2F;你的IP:16601&#x2F;，用户名：666，密码：666，测试是否可用</p>
+<h2 id="配置STUN"><a href="#配置STUN" class="headerlink" title="配置STUN"></a>配置STUN</h2><p>程序很强大，从端口转发到DDNS，啥都有，建议参考官方文档进行配置，这边就少胡说八道一些</p>
+<p><a target="_blank" rel="noopener" href="https://lucky666.cn/docs/modules/stun">https://lucky666.cn/docs/modules/stun</a></p>
+<p>菜单-&gt;STUN内网穿透-&gt;穿透规则列表-&gt;添加穿透规则</p>
+<p><img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/6f1df9ad05c2e182f95ca6dcf7f44c5e.png"></p>
+<p>启用规则，复制STUN穿透公网地址，用手机连接到另一个网络测试</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/130219/2/31948/42538/642b0e8aFdfd09f39/f00caca1113c197c.png"></p>
+<p>如果能够访问，说明穿透成功，可以使用STUN穿透公网地址<strong>临时</strong>访问服务</p>
+<h2 id="配置WebHook伪DDNS"><a href="#配置WebHook伪DDNS" class="headerlink" title="配置WebHook伪DDNS"></a>配置WebHook伪DDNS</h2><p>注意的是，此时的端口号非永久，IP地址也非永久，注意是两个各自非永久，即使DDNS了IP也无法DDNS端口，需要设置DNS的<strong>URL记录</strong>才能实现</p>
+<p>目前没有DDNS程序支持设置DNS的URL记录，luckily，Lucky支持WebHook，有了WebHook，我们可以调用DNS运营商的API接口实现DDNS（实际上DDNS程序的原理也不过如此）</p>
+<p>此处我们使用Cloudflare举例，实际上还可以使用其它支持跳转的API，最主要的就是要F12抓取更新地址的接口</p>
+<p>需要注意的是，Cloudflare DNS并不支持URL记录，需要使用它强大的页面规则来设置，这个规则最多可以设置三条，对于一般人来说也够用了</p>
+<blockquote>
+<p>我这波属实是跳进了好几个坑：</p>
+<ul>
+<li>路由器非OpenWrt系统</li>
+<li>非路由器安装</li>
+<li>DNS服务器不支持动态端口</li>
+</ul>
+</blockquote>
+<h3 id="Cloudflare"><a href="#Cloudflare" class="headerlink" title="Cloudflare"></a>Cloudflare</h3><p>打开Cloudflare Dash，在域名的DNS设置里面添加A记录，ip任意填，打开小云朵</p>
+<p><img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/3ef5135c1011b09e609e7f48cf88ac05.png"></p>
+<p>接着创建页面规则</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/132778/28/35200/95967/642b1513F0ef8f5a6/d2b667dbc08b6db4.png"></p>
+<p>点击设置或编辑，保存，F12抓包获取区域ID和规则ID，<a target="_blank" rel="noopener" href="https://dash.cloudflare.com/api/v4/zones/%E5%90%8E%E9%9D%A2%E8%B7%9F%E7%9D%80%E9%82%A3%E4%B8%B2%E5%B0%B1%E6%98%AF%EF%BC%8Cpagerules%E5%89%8D%E7%9A%84%E6%98%AF%E5%8C%BA%E5%9F%9FID%EF%BC%8Cpagerules%E5%90%8E%E7%9A%84%E6%98%AF%E8%A7%84%E5%88%99ID">https://dash.cloudflare.com/api/v4/zones/后面跟着那串就是，pagerules前的是区域ID，pagerules后的是规则ID</a></p>
+<p><img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/01e1f1d8b237099f3ce85ea1508bed42.png"></p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/133852/29/30557/157635/642b15beF599be059/a8b86822d000420e.png"></p>
+<p>回到Lucky，点击编辑规则，找到Webhook，点击开启，如下设置</p>
+<p>接口地址：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;api.cloudflare.com&#x2F;client&#x2F;v4&#x2F;zones&#x2F;区域ID&#x2F;pagerules&#x2F;规则ID<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>请求方法：<code>PUT</code></p>
+<p>请求头：</p>
+<pre class="line-numbers language-none"><code class="language-none">X-Auth-Email: 你的CF邮箱
+X-Auth-Key: API Key(获取方法同Cloudflare DDNS)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>请求主体：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"targets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"url"</span><span class="token punctuation">,</span>
+      <span class="token property">"constraint"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"operator"</span><span class="token operator">:</span> <span class="token string">"matches"</span><span class="token punctuation">,</span>
+        <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"你的域名/*"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"actions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"forwarding_url"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"http://#&#123;ipAddr&#125;/$1"</span><span class="token punctuation">,</span>
+        <span class="token property">"status_code"</span><span class="token operator">:</span> <span class="token number">301</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"priority"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"active"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>貌似可以进一步简化</p>
+<p>接口调用成功包含的字符串：</p>
+<pre class="line-numbers language-none"><code class="language-none">&quot;success&quot;:true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/75893/4/26884/79257/642b1456Fc653a524/27db6f1c10ada9f7.png"></p>
+<p>点击Webhook手动触发测试按钮，如无异常，应该出现<code>&quot;success&quot;:true</code></p>
+<p>然后回到Cloudflare，可以发现配置被修改，已经不是刚才的值，说明伪DDNS配置成功</p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250403/161401/29/32409/39758/642b1627Feb43710a/4702241fa76c3dd4.png"></p>
+<h3 id="为什么说它是伪DDNS？"><a href="#为什么说它是伪DDNS？" class="headerlink" title="为什么说它是伪DDNS？"></a>为什么说它是伪DDNS？</h3><p>目前我们做到了访问域名就跳转到IP+端口的地址，就是301&#x2F;302跳转，并且我们的方案支持保留链接的参数。你也可以使用一台专门的服务器来实现这个操作，但成本过于高昂而且没有现成API，这里直接白嫖免费的Cloudflare</p>
+<p>但由于存在301&#x2F;302跳转后，浏览器的地址栏内就只有IP地址，没有域名，不是很方便</p>
+<p>具体就是如果需要分享一个已经打开的链接，需要重新编辑，把原来IP+端口的部分替换为域名</p>
+<p>如<a target="_blank" rel="noopener" href="http://test2.xrgzs.asia/">http://test2.xrgzs.asia</a> ，打开后就变成<a href="http://66.666.66.66:16666">http://66.666.66.66:16666</a> ，如果你进入了其它目录，如：<a href="http://66.666.66.66:16666/Cloud">http://66.666.66.66:16666/Cloud</a> ，你需要分享该链接，就需要改成<a target="_blank" rel="noopener" href="http://test2.xrgzs.asia/Cloud">http://test2.xrgzs.asia/Cloud</a></p>
+<h3 id="Lucky-Alist实现私有化网盘公网访问"><a href="#Lucky-Alist实现私有化网盘公网访问" class="headerlink" title="Lucky+Alist实现私有化网盘公网访问"></a>Lucky+Alist实现私有化网盘公网访问</h3><p>使用IP+端口或域名+端口访问肯定不是一件长久的事，尤其是Alist文件分享。为了解决这个问题，我们可以参考PCDN网盘的原理，调用Alist的相关API来实现：</p>
+<ol>
+<li><p>搭建一台本地服务器、一台云服务器</p>
+</li>
+<li><p>在本地、云服务器上安装好Alist</p>
+</li>
+<li><p>在本地服务器上，使用Lucky，把Alist的5244端口穿透出去，可以得到一个动态的IP+端口，在浏览器访问该IP+端口，可以正常看到本地搭建的Alist</p>
+</li>
+<li><p>进入云服务器的Alist后台，添加一个Alist V3类型的储存，填入该IP+端口，保存后，可以在云服务器的Alist上看到挂载的本地Alist</p>
+</li>
+<li><p>利用浏览器F12&#x3D;&gt;网络抓取Alist更新配置的API，方法是：</p>
+<ul>
+<li>F12打开开发人员工具，点击上方的网络一栏</li>
+<li>云服务器Alist后台编辑刚才添加的储存后保存，此时浏览器会提交一个POST请求，F12中可以看到，通常名为update</li>
+<li>把请求地址、请求头、请求主体复制下来，拷贝到Lucky的WebHook中对应的设置里面</li>
+<li>替换请求Body中相关地址为#{ipAddr}</li>
+</ul>
+</li>
+<li><p>测试WebHook，如有报错，请尝试精简请求头的内容，如content type，实际上请求头只需含有authorization就行，最好不要精简请求主体</p>
+</li>
+<li><p>复制请求成功后服务器给出的回应内容到接口调用成功包含的字符串里面，如：</p>
+ <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span><span class="token property">"code"</span><span class="token operator">:</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token property">"message"</span><span class="token operator">:</span><span class="token string">"success"</span><span class="token punctuation">,</span><span class="token property">"data"</span><span class="token operator">:</span><span class="token null keyword">null</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>保存后，如果没有问题，会显示WebHook触发结果为“成功”</p>
+</li>
+<li><p>返回云服务器的Alist，查看挂载的配置是否正常更新</p>
+</li>
+<li><p>之后即可使用云服务器的Alist地址访问到本地的Alist，实现网盘直链私有化，理论上下载速度就为你宽带的上传速度</p>
+</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>如果没有云服务器，但有IPv6地址，可以使用支持IPv6回源的CDN，将IPv6转换为IPv4</li>
+<li>为了防止IP被扫，运营商可能会禁PING，海外用户的连通性需要使用其他方式测试</li>
+<li>对于手头上有大量没有公网IP地址但网络类型为NAT1宽带的用户来说，可以先将文件同步到各个本地服务器节点，然后把这些本地服务器挂载到云服务器Alist，再配合上云服务器Alist的别名和负载均衡功能，这样，客户端使用Aria2c（IDM不行），多次向云服务器请求下载地址，即可实现从各个本地服务器节点同时下载一个文件，从而提高下载速度</li>
+</ul>
+<p>如果懒得折腾，可以使用成品的PCDN储存服务，如大家都知道的123网盘，就是使用这个原理，降低了运营成本，才带来了继蓝奏云之后大文件免登录分享的体验</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">狂犬主子</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://xrgzs.github.io/posts/lucky-stun-upnp-nat1.html">https://xrgzs.github.io/posts/lucky-stun-upnp-nat1.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">狂犬主子</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/alist/">
+                                    <span class="chip bg-color">Alist</span>
+                                </a>
+                            
+                                <a href="/tags/nat/">
+                                    <span class="chip bg-color">NAT</span>
+                                </a>
+                            
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BE%A4%E6%99%96/">
+                                    <span class="chip bg-color">群晖</span>
+                                </a>
+                            
+                                <a href="/tags/dsm/">
+                                    <span class="chip bg-color">DSM</span>
+                                </a>
+                            
+                                <a href="/tags/lucky/">
+                                    <span class="chip bg-color">Lucky</span>
+                                </a>
+                            
+                                <a href="/tags/openwrt/">
+                                    <span class="chip bg-color">OpenWrt</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%89%93%E6%B4%9E%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">打洞技术</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+                                    <span class="chip bg-color">内网穿透</span>
+                                </a>
+                            
+                                <a href="/tags/upnp/">
+                                    <span class="chip bg-color">UPNP</span>
+                                </a>
+                            
+                                <a href="/tags/fullcone-nat/">
+                                    <span class="chip bg-color">FullCone NAT</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/font-commonly-used-download.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/58a1ca00da4f1d1c7187265d08129837.jpg" class="responsive-img" alt="17种字体的官方下载链接">
+                        
+                        <span class="card-title">17种字体的官方下载链接</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            视频字幕设计专用
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8A%9E%E5%85%AC%E6%8A%80%E5%B7%A7/" class="post-category">
+                                    办公技巧
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/">
+                        <span class="chip bg-color">视频剪辑</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C/">
+                        <span class="chip bg-color">视频制作</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%97%E5%B9%95/">
+                        <span class="chip bg-color">字幕</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">设计</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%97%E4%BD%93/">
+                        <span class="chip bg-color">字体</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/eduimg.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/6a11c9dd1844f9aba6a323420b8f5341.jpg" class="responsive-img" alt="希沃鸿合文香一体机OPS电脑原厂预装教育系统镜像ESD打包封装驱动程序下载恢复盘构建">
+                        
+                        <span class="card-title">希沃鸿合文香一体机OPS电脑原厂预装教育系统镜像ESD打包封装驱动程序下载恢复盘构建</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            希沃鸿合文香一体机OPS电脑原厂预装教育系统镜像ESD打包封装驱动程序下载恢复盘构建
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/" class="post-category">
+                                    潇然工作室
+                                </a>
+                            
+                            <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/" class="post-category">
+                                    Windows
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/seewo/">
+                        <span class="chip bg-color">SEEWO</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%80%E4%BD%93%E6%9C%BA/">
+                        <span class="chip bg-color">一体机</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B8%8C%E6%B2%83/">
+                        <span class="chip bg-color">希沃</span>
+                    </a>
+                    
+                    <a href="/tags/maxhub/">
+                        <span class="chip bg-color">MAXHUB</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%B8%BF%E5%90%88/">
+                        <span class="chip bg-color">鸿合</span>
+                    </a>
+                    
+                    <a href="/tags/hitevision/">
+                        <span class="chip bg-color">HiteVision</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%96%87%E9%A6%99/">
+                        <span class="chip bg-color">文香</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%B5%E5%AD%90%E7%99%BD%E6%9D%BF/">
+                        <span class="chip bg-color">电子白板</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B8%8C%E6%B2%83%E7%99%BD%E6%9D%BF/">
+                        <span class="chip bg-color">希沃白板</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%B8%BF%E5%90%88i%E5%AD%A6/">
+                        <span class="chip bg-color">鸿合i学</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%B8%BF%E5%90%88%E7%99%BD%E6%9D%BF/">
+                        <span class="chip bg-color">鸿合白板</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/">
+                        <span class="chip bg-color">系统镜像</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8E%9F%E5%8E%82%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">原厂系统</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%81%A2%E5%A4%8D%E7%9B%98/">
+                        <span class="chip bg-color">恢复盘</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('200')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 潇然工作室<br />'
+            + '文章作者: 狂犬主子<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2017-2023</span>
+            
+            <a href="/about" target="_blank">Xiaoran Studio</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">61.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+                <span id="SSL">
+                本站支持&nbsp;<a href="https://ipw.cn/ipv6webcheck/?site=www.xrgzs.top" target='_blank'>IPv6</a>&nbsp;访问
+                |&nbsp;本站支持&nbsp;<a href="https://ipw.cn/ssl/?site=www.xrgzs.top" target='_blank'>SSL安全</a>&nbsp;访问
+            </span>
+            <!-- 运行天数提醒. -->
+            
+            
+            <br></br>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xrgzs" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:dalizxr@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2744460679" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2744460679" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script src="https://myhkw.cn/api/player/165943534482" id="myhk" key="165943534482" ></script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lightgallery/1.10.0/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://xrgzs.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

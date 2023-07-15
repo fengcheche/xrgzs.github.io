@@ -1,0 +1,1846 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Proxmox VE,PVE,虚拟机,虚拟化,Debian,Linux">
+    <meta name="description" content="一篇 All in One 的笔记">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Proxmox VE 常用命令整理 | 潇然工作室</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"3EkoIokEjoCIrHFE",ck:"3EkoIokEjoCIrHFE",autoTrack:true})</script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="潇然工作室" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">潇然工作室</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/">
+          
+          <i class="fas fa-home" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>首页</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>关于</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xrsys.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-ghost" style="zoom: 0.6;"></i>
+      
+      <span>系统</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xrok.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-sync" style="zoom: 0.6;"></i>
+      
+      <span>装机助理</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">潇然工作室</div>
+        <div class="logo-desc">
+            
+            分享网络知识。潇洒自然 - 潇然工作室 - Xiaoran Studio - 狂犬主子
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-home" style="position: absolute;left:50px" ></i>
+			      
+		          <span>首页</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>关于</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xrsys.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-ghost"></i>
+			
+			系统
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xrok.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-sync"></i>
+			
+			装机助理
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img08.mifile.cn/v1/MI_542ED8B1722DC/77bc3356f0742855196a1998c75c8bcc.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Proxmox VE 常用命令整理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/debian/">
+                                <span class="chip bg-color">Debian</span>
+                            </a>
+                        
+                            <a href="/tags/proxmox-ve/">
+                                <span class="chip bg-color">Proxmox VE</span>
+                            </a>
+                        
+                            <a href="/tags/pve/">
+                                <span class="chip bg-color">PVE</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                <span class="chip bg-color">虚拟机</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/">
+                                <span class="chip bg-color">虚拟化</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" class="post-category">
+                                服务器运维
+                            </a>
+                        
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-05-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-07-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Proxmox-VE（PVE）常用命令整理"><a href="#Proxmox-VE（PVE）常用命令整理" class="headerlink" title="Proxmox VE（PVE）常用命令整理"></a>Proxmox VE（PVE）常用命令整理</h1><p>个人对虚拟化部署 <del>All in BOOM</del> Home Server 有需求，试过 ESXi、unRaid、Proxmox VE 等方案，认为 ESXi、PVE 这两款比较符合我的要求，前者适合专业的服务器使用，个人 PC 还是推荐基于 Debian 的后者。由于本人没有专业服务器，ESXi 比较吃我内存，故转投 PVE</p>
+<p>由于PVE许多功能无法在Web UI中完成设置，需要使用一些命令、修改一些配置文件，本人记性又不太好。俗话说“好记性不如烂笔头”，故整理出本笔记供后续查看，本博客也重点更新此文章，如有需要请收藏</p>
+<p>具体ESXi、PVE、unRaid的对比参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166352130">https://zhuanlan.zhihu.com/p/166352130</a></p>
+<p>学习PVE推荐博客（PVE的瑞士军刀）：<a target="_blank" rel="noopener" href="https://foxi.buduanwang.vip/">https://foxi.buduanwang.vip/</a></p>
+<p><strong>注意：本文大多数内容基于PVE7编写，和其它版本会有些出入，请悉知！</strong></p>
+<h2 id="一、安装升级"><a href="#一、安装升级" class="headerlink" title="一、安装升级"></a>一、安装升级</h2><p>关于系统安装，属于是有手就行的操作，故不在赘述。</p>
+<h3 id="（非必须）安装PVETools"><a href="#（非必须）安装PVETools" class="headerlink" title="（非必须）安装PVETools"></a>（非必须）安装PVETools</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LC_ALL</span></span><span class="token operator">=</span>en_US.UTF-8
+<span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">git</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> clone https://github.com/ivanhao/pvetools.git
+<span class="token builtin class-name">cd</span> pvetools
+./pvetools.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1、国内源设置"><a href="#1、国内源设置" class="headerlink" title="1、国内源设置"></a>1、国内源设置</h3><p>删除企业源：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> <span class="token parameter variable">-rf</span> /etc/apt/sources.list.d/pve-enterprise.list
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /etc/apt/sources.list.d/ceph.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>设置国内源：注意分版本</p>
+<details>
+<summary>展开查看PVE7专用命令</summary>
+仅适用于PVE7，其它版本请勿乱用！！！
+
+<p>编辑镜像源：</p>
+<p>先备份一下再修改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nano</span> /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<p>中科大源（移动速度快）：</p>
+<pre class="line-numbers language-none"><code class="language-none">deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; bullseye main contrib non-free
+deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; bullseye-updates main contrib non-free
+deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; bullseye-backports main contrib non-free
+deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian-security bullseye-security main contrib 
+deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;proxmox&#x2F;debian bullseye pve-no-subscription
+#deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;proxmox&#x2F;debian&#x2F;ceph-pacific bullseye main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>一键操作——中科大源：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">'EOF'<span class="token bash punctuation"> <span class="token operator">></span> /etc/apt/sources.list</span>
+deb http://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian-security bullseye-security main contrib 
+deb http://mirrors.ustc.edu.cn/proxmox/debian bullseye pve-no-subscription
+#deb http://mirrors.ustc.edu.cn/proxmox/debian/ceph-pacific bullseye main
+EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</details>
+
+<details>
+<summary>展开查看PVE通用命令</summary>
+
+<p>一键操作——中科大源：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改基础系统（Debian）的源文件：</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s|^deb http://ftp.debian.org|deb https://mirrors.ustc.edu.cn|g'</span> /etc/apt/sources.list
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s|^deb http://security.debian.org|deb https://mirrors.ustc.edu.cn/debian-security|g'</span> /etc/apt/sources.list
+
+<span class="token comment"># 修改 Proxmox 的源文件</span>
+<span class="token builtin class-name">source</span> /etc/os-release
+<span class="token builtin class-name">echo</span> <span class="token string">"deb https://mirrors.ustc.edu.cn/proxmox/debian/pve <span class="token variable">$VERSION_CODENAME</span> pve-no-subscription"</span> <span class="token operator">></span> /etc/apt/sources.list.d/pve-no-subscription.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对于 Proxmox Backup Server 和 Proxmox Mail Gateway，请将以上命令中的 <code>pve</code> 分别替换为 <code>pbs</code> 和 <code>pmg</code>。</p>
+</details>
+
+<h3 id="2、升级系统"><a href="#2、升级系统" class="headerlink" title="2、升级系统"></a>2、升级系统</h3><p>更新软件包数据库缓存：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>升级系统软件包：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>（可选，建议）安装<code>vim</code>代替难用的<code>vi</code>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> <span class="token function">vim</span> <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>（可选，建议）安装 linux 6.2 内核代替 PVE7 (debian 11) 难用的 5.15 内核：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> pve-kernel-6.2 <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注意：PVE8 已默认 linux 6.2 内核！</p>
+<h3 id="3、替换-CT-模板源"><a href="#3、替换-CT-模板源" class="headerlink" title="3、替换 CT 模板源"></a>3、替换 CT 模板源</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> /usr/share/perl5/PVE/APLInfo.pm /usr/share/perl5/PVE/APLInfo.pm_back
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s|http://download.proxmox.com|http://mirrors.ustc.edu.cn/proxmox|g'</span> /usr/share/perl5/PVE/APLInfo.pm
+systemctl restart pvedaemon<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4、删除订阅弹窗提醒"><a href="#4、删除订阅弹窗提醒" class="headerlink" title="4、删除订阅弹窗提醒"></a>4、删除订阅弹窗提醒</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i.bak</span> <span class="token string">"s/data.status.toLowerCase() !== 'active'/false/g"</span> /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、磁盘管理"><a href="#二、磁盘管理" class="headerlink" title="二、磁盘管理"></a>二、磁盘管理</h2><h3 id="1、查看分区结构"><a href="#1、查看分区结构" class="headerlink" title="1、查看分区结构"></a>1、查看分区结构</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">fdisk</span> <span class="token parameter variable">-l</span>
+lvs
+<span class="token function">cat</span> /etc/pve/storage.cfg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root@pve:~<span class="token comment"># fdisk -l</span>
+Disk /dev/nvme0n1: <span class="token number">465.76</span> GiB, <span class="token number">500107862016</span> bytes, <span class="token number">976773168</span> sectors
+Disk model: Asgard AN2 500NVMe-M.2/80               
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+Disklabel type: gpt
+Disk identifier: 6F4A00AC-F4C9-4352-A8D4-63148EC21292
+
+Device           Start       End   Sectors   Size Type
+/dev/nvme0n1p1      <span class="token number">34</span>      <span class="token number">2047</span>      <span class="token number">2014</span>  1007K BIOS boot
+/dev/nvme0n1p2    <span class="token number">2048</span>   <span class="token number">2099199</span>   <span class="token number">2097152</span>     1G EFI System
+/dev/nvme0n1p3 <span class="token number">2099200</span> <span class="token number">976773134</span> <span class="token number">974673935</span> <span class="token number">464</span>.8G Linux LVM
+
+
+Disk /dev/mapper/pve-swap: <span class="token number">7.62</span> GiB, <span class="token number">8183087104</span> bytes, <span class="token number">15982592</span> sectors
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+
+
+Disk /dev/mapper/pve-root: <span class="token number">96</span> GiB, <span class="token number">103079215104</span> bytes, <span class="token number">201326592</span> sectors
+Units: sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+root@pve:~<span class="token comment"># lvs</span>
+  LV   VG  Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  data pve twi-a-tz-- <span class="token number">338</span>.23g             <span class="token number">0.00</span>   <span class="token number">0.50</span>                            
+  root pve -wi-ao----  <span class="token number">96</span>.00g                                                    
+  swap pve -wi-ao----   <span class="token number">7</span>.62g                                                    
+root@pve:~<span class="token comment"># cat /etc/pve/storage.cfg</span>
+dir: <span class="token builtin class-name">local</span>
+        path /var/lib/vz
+        content iso,vztmpl,backup
+
+lvmthin: local-lvm
+        thinpool data
+        vgname pve
+        content rootdir,images<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、扩展根目录"><a href="#2、扩展根目录" class="headerlink" title="2、扩展根目录"></a>2、扩展根目录</h3><p>在虚拟机配置栏，选择磁盘，点击移动磁盘到其他磁盘</p>
+<p>使用命令删除lvm-thin：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lvremove /dev/pve/data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>将lvm-thin的空间转移到pve-root：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lvextend <span class="token parameter variable">-rl</span> +100%FREE /dev/pve/root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用<code>df -h</code>查看，根目录已经扩大：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root@pve:~<span class="token comment"># df -h</span>
+Filesystem            Size  Used Avail Use% Mounted on
+udev                  <span class="token number">3</span>.8G     <span class="token number">0</span>  <span class="token number">3</span>.8G   <span class="token number">0</span>% /dev
+tmpfs                 781M  <span class="token number">1</span>.2M  780M   <span class="token number">1</span>% /run
+/dev/mapper/pve-root  450G  <span class="token number">3</span>.7G  427G   <span class="token number">1</span>% /
+tmpfs                 <span class="token number">3</span>.9G   25M  <span class="token number">3</span>.8G   <span class="token number">1</span>% /dev/shm
+tmpfs                 <span class="token number">5</span>.0M     <span class="token number">0</span>  <span class="token number">5</span>.0M   <span class="token number">0</span>% /run/lock
+/dev/nvme0n1p2       1022M  344K 1022M   <span class="token number">1</span>% /boot/efi
+/dev/fuse             128M   16K  128M   <span class="token number">1</span>% /etc/pve
+tmpfs                 781M     <span class="token number">0</span>  781M   <span class="token number">0</span>% /run/user/0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在网页上，删除lvm-thin：</p>
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-5/1c24a421-621a-4737-bafd-8a8a9d4589fa.png"></p>
+<p><img src="https://ldbbs.ldmnq.com/bbs/topic/attachment/2023-5/993220ba-836b-480f-be8c-f029ebc6e727.png"></p>
+<p>进入目录&#x2F;var&#x2F;lib&#x2F;vz查看所有内容：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> /var/lib/vz/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root@pve:~<span class="token comment"># ls /var/lib/vz/</span>
+dump  images  private  snippets  template<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="三、硬件直通"><a href="#三、硬件直通" class="headerlink" title="三、硬件直通"></a>三、硬件直通</h2><h3 id="1、开启-IOMMU-支持"><a href="#1、开启-IOMMU-支持" class="headerlink" title="1、开启 IOMMU 支持"></a>1、开启 IOMMU 支持</h3><p>编辑 grub 配置文件中，Linux 内核的启动参数：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /etc/default/grub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>找到：</p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet”</p>
+</blockquote>
+<p>Intel CPU改为：</p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt”</p>
+</blockquote>
+<p>如需GVT-g改为：</p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt i915.enable_gvt&#x3D;1”</p>
+</blockquote>
+<p>J3455等分组不正常，需要开启ACS改为：</p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt pcie_acs_override&#x3D;downstream”</p>
+</blockquote>
+<p>AMD CPU改为：</p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet amd_iommu&#x3D;on iommu&#x3D;pt pcie_acs_override&#x3D;downstream”</p>
+</blockquote>
+<p>显卡直通加上<code>video=vesafb:off video=efifb:off video=simplefb:off</code>，目的是屏蔽显卡，加了之后，启动进内核后停留在一个画面，<font color=red><strong>如需使用钩子、安装GUI请勿添加，通常无需添加！</strong></font></p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt video&#x3D;vesafb:off video&#x3D;efifb:off video&#x3D;simplefb:off pcie_acs_override&#x3D;downstream”</p>
+</blockquote>
+<p>最全（不用改modprobe）：</p>
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt pcie_acs_override&#x3D;downstream,multifunction initcall_blacklist&#x3D;sysfb_init video&#x3D;simplefb:off video&#x3D;vesafb:off video&#x3D;efifb:off video&#x3D;vesa:off disable_vga&#x3D;1 vfio_iommu_type1.allow_unsafe_interrupts&#x3D;1 kvm.ignore_msrs&#x3D;1 modprobe.blacklist&#x3D;radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi,i915”</p>
+</blockquote>
+<p>说明：</p>
+<ol>
+<li>IOMMU (I&#x2F;O Memory Management Unit)中断重新映射。如果不中断重新映射，将无法使用 PCI 直通。设备分配将失败，并显示“无法分配设备”[设备名称]“：不允许操作”或“找不到中断重新映射硬件，将设备传递到非特权域不安全”错误。【 ‘Failed to assign device “[device name]”: Operation not permitted’ or ‘Interrupt Remapping hardware not found, passing devices to unprivileged domains is insecure.’ error.】 所有使用英特尔处理器和芯片组的系统，如果支持英特尔虚拟化技术定向 I&#x2F;O （VT-d），但不支持中断重新映射，将看到此类错误。较新的处理器和芯片组（AMD 和英特尔）提供中断重新映射支持；</li>
+<li>PCIe直通需要主要主要开启虚拟化， Intel叫VT-d，AMD的叫AMD-V(i) ，都需要再主板BIOS里面开启；</li>
+<li>Intel添加的为<code>intel_iommu=on</code>，AMD添加的为<code>amd_iommu=on</code>；</li>
+<li><code>iommu=pt</code>：这仅在必要时才启用 IOMMU 转换，适配器不需要使用 DMA 转换到内存，因此可以提高虚拟机管理程序 PCIe 设备（未传递到 VM）的性能。意思就是开了能提高虚拟机调取PCIe的性能，那就开吧。</li>
+<li><code>i915.enable_gvt=1</code>：Intel的 GVT-g 驱动程序集成在内核中，启用时加载模块。意思就是，想开启GVT-g的就添加这条，显卡直通的就不要添加了。</li>
+</ol>
+<h3 id="2、增加驱动黑名单"><a href="#2、增加驱动黑名单" class="headerlink" title="2、增加驱动黑名单"></a>2、增加驱动黑名单</h3><p><font color=red><strong>如果使用vGPU、Gvt-G、使用钩子、安装GUI请勿添加，通常无需添加！</strong></font></p>
+<p>Intel显卡：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"blacklist snd_hda_intel"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf 
+<span class="token builtin class-name">echo</span> <span class="token string">"blacklist snd_hda_codec_hdmi"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf 
+<span class="token builtin class-name">echo</span> <span class="token string">"blacklist i915"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>AMD显卡：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"blacklist radeon"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf 
+<span class="token builtin class-name">echo</span> <span class="token string">"blacklist amdgpu"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>NVIDIA显卡：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"blacklist nouveau"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf 
+<span class="token builtin class-name">echo</span> <span class="token string">"blacklist nvidia"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf 
+<span class="token builtin class-name">echo</span> <span class="token string">"blacklist nvidiafb"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3、绑定vfio"><a href="#3、绑定vfio" class="headerlink" title="3、绑定vfio"></a>3、绑定vfio</h3><p><font color=red><strong>通常无需执行此步骤！</strong></font></p>
+<h4 id="查看自己的显卡、声卡的PCI地址、did和vid"><a href="#查看自己的显卡、声卡的PCI地址、did和vid" class="headerlink" title="查看自己的显卡、声卡的PCI地址、did和vid"></a>查看自己的显卡、声卡的PCI地址、did和vid</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lspci <span class="token parameter variable">-nn</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:~# lspci -nn<br>……<br><strong>00:02.0 VGA compatible controller [0300]: Intel Corporation HD Graphics 530 [8086:1912] (rev 06)</strong><br>……<br><strong>00:1f.3 Audio device [0403]: Intel Corporation 100 Series&#x2F;C230 Series Chipset Family HD Audio Controller [8086:a170] (rev 31)</strong><br>……</p>
+</blockquote>
+<p>可以看到，显卡的PCI地址为00:02.0，did和vid为8086:1912，声卡以此类推</p>
+<h4 id="执行命令增加vfio-pci选项"><a href="#执行命令增加vfio-pci选项" class="headerlink" title="执行命令增加vfio-pci选项"></a>执行命令增加vfio-pci选项</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"options vfio-pci ids=8086:1912,8086:a170"</span> <span class="token operator">></span> /etc/modprobe.d/vfio.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注意：上面这条命令，ids&#x3D;后面跟直通组的所有设备，中间以英文逗号隔开，自己的设备需要自己替换，请勿照抄</p>
+<h4 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h4><p>上述操作完成之后，再检查一下，是否将例子内容替换成自己的</p>
+<p>使用以下命令查看：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /etc/modprobe.d/blacklist.conf
+<span class="token function">cat</span> /etc/modprobe.d/vfio.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>blacklist radeon<br>blacklist amdgpu<br>blacklist snd_hda_intel<br>blacklist snd_hda_codec_hdmi<br>blacklist i915<br>options vfio-pci ids&#x3D;8086:1912,8086:a170</p>
+</blockquote>
+<h3 id="4、加载相应的内核模块"><a href="#4、加载相应的内核模块" class="headerlink" title="4、加载相应的内核模块"></a>4、加载相应的内核模块</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> vfio <span class="token operator">>></span> /etc/modules
+<span class="token builtin class-name">echo</span> vfio_iommu_type1 <span class="token operator">>></span> /etc/modules
+<span class="token builtin class-name">echo</span> vfio_pci <span class="token operator">>></span> /etc/modules
+<span class="token builtin class-name">echo</span> vfio_virqfd <span class="token operator">>></span> /etc/modules<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如需vGPU和GVT-g，还需：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> kvmgt <span class="token operator">>></span> /etc/modules<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>对于Nvidia显卡，避免一些莫名其妙的错误，需要：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"options kvm ignore_msrs=1"</span> <span class="token operator">></span> /etc/modprobe.d/kvm.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="更新grub和内核"><a href="#更新grub和内核" class="headerlink" title="更新grub和内核"></a>更新grub和内核</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">update-grub</span>
+update-initramfs <span class="token parameter variable">-k</span> all <span class="token parameter variable">-u</span>
+<span class="token function">reboot</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5、验证是否开启iommu"><a href="#5、验证是否开启iommu" class="headerlink" title="5、验证是否开启iommu"></a>5、验证是否开启iommu</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">dmesg</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-e</span> DMAR <span class="token parameter variable">-e</span> IOMMU <span class="token parameter variable">-e</span> AMD-Vi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>出现如下例子，则代表成功：</p>
+<blockquote>
+<p>……<br><strong>[    0.030895] DMAR: IOMMU enabled</strong><br>……<br><strong>[    0.303716] DMAR: Intel(R) Virtualization Technology for Directed I&#x2F;O</strong></p>
+</blockquote>
+<p>此时输入命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> /sys/kernel/iommu_groups/ <span class="token parameter variable">-type</span> l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>&#x2F;sys&#x2F;kernel&#x2F;iommu_groups&#x2F;7&#x2F;devices&#x2F;0000:00:1c.0<br>&#x2F;sys&#x2F;kernel&#x2F;iommu_groups&#x2F;5&#x2F;devices&#x2F;0000:00:17.0<br>&#x2F;sys&#x2F;kernel&#x2F;iommu_groups&#x2F;13&#x2F;devices&#x2F;0000:06:00.0<br>……</p>
+</blockquote>
+<p>出现很多直通组，就代表成功</p>
+<p>如果没有任何东西，就是没有开启，请检查主板BIOS VT-d设置和GRUB设置</p>
+<blockquote>
+<p>如硬件设备不支持，可以使用以下命令允许不安全的中断：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"options vfio_iommu_type1 allow_unsafe_interrupts=1"</span> <span class="token operator">></span> /etc/modprobe.d/iommu_unsafe_interrupts.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</blockquote>
+<h3 id="6、显卡直通直通"><a href="#6、显卡直通直通" class="headerlink" title="6、显卡直通直通"></a>6、显卡直通直通</h3><h4 id="独显直通虚拟机"><a href="#独显直通虚拟机" class="headerlink" title="独显直通虚拟机"></a>独显直通虚拟机</h4><p>独显直通比较简单，直接在网页里面配置，机型按需设置，如legacy boot就用SeaBIOS+i440fx，uefi boot就用OVMF+q35，装好系统，添加PCI设备，选择你的显卡，所有功能最好勾上，PCI-Express勾不勾需要自行测试，i440fx无法勾选PCI-E，然后如果需要显卡显示到显示器，将虚拟机显示设为无，勾选主GPU</p>
+<p>直通两张显卡可能会出现问题及解决方法：</p>
+<p><a target="_blank" rel="noopener" href="https://www.wunote.cn/article/5288/">https://www.wunote.cn/article/5288/</a></p>
+<h4 id="核显直通虚拟机"><a href="#核显直通虚拟机" class="headerlink" title="核显直通虚拟机"></a>核显直通虚拟机</h4><p>建议6代以上机器尝试，实测6代i5 6500完美直通，任何版本驱动均无问题</p>
+<p>注意：</p>
+<ul>
+<li>直通后无法开启虚拟机，请检查配置有没有错误，在配置正确的情况下尝试更新、降级PVE Linux内核。</li>
+<li>直通给Windows虚拟机打上驱动后出现黑屏、花屏等问题，最好试试Linux，因为有时候是显卡的Windows驱动导致的</li>
+</ul>
+<p>Linux下查看显卡信息：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> /dev/dri<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="方案1-UDT直通（不推荐）"><a href="#方案1-UDT直通（不推荐）" class="headerlink" title="方案1-UDT直通（不推荐）"></a>方案1-UDT直通（不推荐）</h5><p>适用于5代以上的CPU核显</p>
+<p>如果你的VMID是123，那么命令应该是</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token number">123</span> <span class="token parameter variable">-args</span> <span class="token string">"-device vfio-pci,host=00:02.0,addr=0x18,x-vga=on,x-igd-opregion=on"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果你打算直通到群晖，需要在GUI面板上，将显卡设置成无，添加串口设备用于调试，同时将核显位置绑定到虚拟机的00:02位置，所以应该执行该命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token number">123</span> <span class="token parameter variable">-args</span> <span class="token string">"-device vfio-pci,host=00:02.0,addr=0x02,x-vga=on,x-igd-opregion=on"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>PVE下黑群晖核显直通无法开启硬解的解决方法</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token number">123</span> <span class="token parameter variable">-args</span> <span class="token string">"-device vfio-pci,host=00:02.0,addr=0x02,x-vga=on,x-igd-opregion=on"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果通过上述操作，核显不能输出到显示器，那么你应该尝试传统方式</p>
+<h5 id="方案2-传统方式（推荐）"><a href="#方案2-传统方式（推荐）" class="headerlink" title="方案2-传统方式（推荐）"></a>方案2-传统方式（推荐）</h5><p>SeaBIOS+i440fx，要求宿主机BIOS中启用CSM，且最好以Legacy Boot引导模式启动，将显卡设置成无</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> /etc/pve/qemu-server/<span class="token operator">&lt;</span>VMID<span class="token operator">></span>.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在直通核显一行后面添加“legacy-igd&#x3D;1”，如下所示</p>
+<blockquote>
+<p>hostpci0: 0000:00:02,legacy-igd&#x3D;1</p>
+</blockquote>
+<p><strong>还要在首行添加以下内容（重要）</strong></p>
+<blockquote>
+<p>args: -set device.hostpci0.x-igd-gms&#x3D;1</p>
+</blockquote>
+<p>或</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token operator">&lt;</span>VMID<span class="token operator">></span> <span class="token parameter variable">-args</span> <span class="token string">"-set device.hostpci0.x-igd-gms=1"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果还是不行，请看更多教程：</p>
+<p><a target="_blank" rel="noopener" href="https://foxi.buduanwang.vip/yj/1602.html">https://foxi.buduanwang.vip/yj/1602.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://zyyme.com/pve-igpu-passthrough.html">https://zyyme.com/pve-igpu-passthrough.html</a></p>
+<h5 id="方案3-GVTg"><a href="#方案3-GVTg" class="headerlink" title="方案3-GVTg"></a>方案3-GVTg</h5><p>参看设备支持的类型：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> /sys/bus/pci/devices/0000:00:02.0/mdev_supported_types<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>我这边i5 6500显示</p>
+<blockquote>
+<p>i915-GVTg_V5_4  i915-GVTg_V5_8</p>
+</blockquote>
+<blockquote>
+<p><strong>附：GVT-g可支持数量和最多分辨率：</strong></p>
+<ul>
+<li>i915-GVTg_V5_1  # Video memory: &lt;512MB, 2048MB&gt;, resolution: up to 1920x1200<br>可用数量</li>
+<li>i915-GVTg_V5_2  # Video memory: &lt;256MB, 1024MB&gt;, resolution: up to 1920x1200<br>可用数量</li>
+<li><strong>i915-GVTg_V5_4  # Video memory: &lt;128MB, 512MB&gt;, resolution: up to 1920x1200</strong><br><strong>可用数量2</strong></li>
+<li>i915-GVTg_V5_8  # Video memory: &lt;64MB, 384MB&gt;, resolution: up to 1024x768<br>可用数量1</li>
+</ul>
+</blockquote>
+<p><img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/a89d62d54a33ed4b9dea325a21a9759a.png"></p>
+<p>群晖：seabios+i440fx</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token number">123</span> <span class="token parameter variable">-args</span> <span class="token string">"-set 'device.hostpci0.addr=0x02'"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h3 id="7、硬盘直通虚拟机"><a href="#7、硬盘直通虚拟机" class="headerlink" title="7、硬盘直通虚拟机"></a>7、硬盘直通虚拟机</h3><p>引用佛西博客的图</p>
+<p><img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/830dd026e741952d99653ec804218b4f.png"></p>
+<h4 id="RDM磁盘直通"><a href="#RDM磁盘直通" class="headerlink" title="RDM磁盘直通"></a>RDM磁盘直通</h4><p>将单个硬盘或者分区，通过qemu进行映射到虚拟机</p>
+<p>通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd</p>
+<p>相当于将某块硬盘直通给虚拟机的磁盘控制器，据说性能衰减不大，但虚拟机一般获取不到磁盘信息，容易丢失数据，NAS勿用！！！！！</p>
+<p>RDM磁盘直通，不需要开启iommu，只能在PVE命令行中添加</p>
+<p>列出当前的硬盘列表：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> <span class="token parameter variable">-la</span> /dev/disk/by-id/<span class="token operator">|</span><span class="token function">grep</span> <span class="token parameter variable">-v</span> dm<span class="token operator">|</span><span class="token function">grep</span> <span class="token parameter variable">-v</span> lvm<span class="token operator">|</span><span class="token function">grep</span> <span class="token parameter variable">-v</span> part<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:~# ls -la &#x2F;dev&#x2F;disk&#x2F;by-id&#x2F;|grep -v dm|grep -v lvm|grep -v part<br>total 0<br>drwxr-xr-x 2 root root 540 Apr 28 16:39 .<br>drwxr-xr-x 6 root root 120 Mar  3 15:52 ..<br>lrwxrwxrwx 1 root root  13 Apr 28 16:39 nvme-eui.01000000010000005cd2e431fee65251 -&gt; ..&#x2F;..&#x2F;nvme2n1<br>lrwxrwxrwx 1 root root  13 Mar  3 15:52 nvme-eui.334843304aa010020025385800000004 -&gt; ..&#x2F;..&#x2F;nvme1n1<br>lrwxrwxrwx 1 root root  13 Apr 28 17:36 nvme-eui.334843304ab005400025385800000004 -&gt; ..&#x2F;..&#x2F;nvme0n1<br>lrwxrwxrwx 1 root root  13 Apr 28 16:39 nvme-INTEL_SSDPE2KX020T8_BTLJ039307142P0BGN -&gt; ..&#x2F;..&#x2F;nvme2n1<br>lrwxrwxrwx 1 root root  13 Mar  3 15:52 nvme-SAMSUNG_MZWLL800HEHP-00003_S3HCNX0JA01002 -&gt; ..&#x2F;..&#x2F;nvme1n1<br>lrwxrwxrwx 1 root root  13 Apr 28 17:36 nvme-SAMSUNG_MZWLL800HEHP-00003_S3HCNX0JB00540 -&gt; ..&#x2F;..&#x2F;nvme0n1<br>lrwxrwxrwx 1 root root   9 Mar  3 15:52 scsi-35000c500474cd7eb -&gt; ..&#x2F;..&#x2F;sda<br>lrwxrwxrwx 1 root root   9 Mar  3 15:52 wwn-0x5000c500474cd7eb -&gt; ..&#x2F;..&#x2F;sda</p>
+</blockquote>
+<p>注意：</p>
+<ul>
+<li>nvme开头的是nvme硬盘</li>
+<li>ata开头是走sata或者ata通道的设备</li>
+<li>scsi开头是scsi设备-阵列卡raid或者是直通卡上的硬盘</li>
+</ul>
+<p><strong>直通方法</strong></p>
+<p>通过以下命令进行RDM直通：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token operator">&lt;</span>vmid<span class="token operator">></span> <span class="token parameter variable">--scsiX</span> /dev/disk/by-id/xxxxxxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注意：</p>
+<p><vmid>是你的虚拟机编号；</p>
+<p>–scsiX中的scsi指的是虚拟机磁盘控制器类型，也可改为–sataX、–ideX；</p>
+<p>–scsiX中的X是你想直通到虚拟机scsi控制器的那个插孔，为整数，如0、1、2、3，注意如果是sata控制器不能超过–sata5，因为q35最多只支持6个sata ports</p>
+<p>例如虚拟机的vmid是123，打算直通intel的一个nvme硬盘，那么你可以使用下面命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qm <span class="token builtin class-name">set</span> <span class="token number">101</span> <span class="token parameter variable">--scsi1</span> /dev/disk/by-id/nvme-INTEL_SSDPE2KX020T8_BTLJ039307142P0BGN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果需要取消直通，直接在浏览器网页里面删除即可</p>
+<h4 id="磁盘控制器直通"><a href="#磁盘控制器直通" class="headerlink" title="磁盘控制器直通"></a>磁盘控制器直通</h4><p>通常硬盘都是连接到硬盘控制器（Nvme硬盘除外，因为本来就是个PCI-E设备），由硬盘控制器管理。因此直通了磁盘控制器，就会让磁盘控制器下的所有硬盘间接直通到虚拟机</p>
+<p>通过这种方式，硬盘会在虚拟机内会认为是一个物理磁盘，可以获得全部的磁盘属性，如SMART信息</p>
+<p>NAS推荐这种方案，如果不想购买直通卡的话，可以将系统安装到NVME硬盘或USB外置移动硬盘中，然后直通主板SATA控制器给NAS虚拟机</p>
+<p><strong>直通方法</strong></p>
+<p>磁盘控制器直通，需要开启iommu，可以到网页中添加，q35注意勾选PCI-Express</p>
+<h3 id="8、网卡直通"><a href="#8、网卡直通" class="headerlink" title="8、网卡直通"></a>8、网卡直通</h3><p>同PCI设备直通，但请勿直通PVE管理网口的网卡</p>
+<p>I350-T4网卡，开启PCIe桥的ACS特性，可以直通每个网口给不同虚拟机（1对1），如需要直通一个网口给多个虚拟机（1对多），不使用软交换，需要使用到SR-IOV</p>
+<h4 id="Intel-I350-T4-SR-IOV"><a href="#Intel-I350-T4-SR-IOV" class="headerlink" title="Intel I350-T4 SR-IOV"></a>Intel I350-T4 SR-IOV</h4><p>测试环境：</p>
+<ul>
+<li>i5-6500</li>
+<li>华硕Z170-P</li>
+<li>Winyao I350-T4</li>
+</ul>
+<p>参考：<a target="_blank" rel="noopener" href="http://www.taodudu.cc/news/show-4764419.html">http://www.taodudu.cc/news/show-4764419.html</a></p>
+<p><strong>查询相关信息</strong></p>
+<p>查看网卡功能：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lspci <span class="token parameter variable">-s</span> 01:00 <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:~#  lspci -s 01:00 -v<br>01:00.0 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)<br>        Subsystem: Device 1d1a:0000<br>        Flags: bus master, fast devsel, latency 0, IRQ 16, IOMMU group 12<br>        Memory at c8000000 (32-bit, non-prefetchable) [size&#x3D;1M]<br>        Memory at c8600000 (32-bit, non-prefetchable) [size&#x3D;16K]<br>        Expansion ROM at c8400000 [disabled] [size&#x3D;512K]<br>        Capabilities: [40] Power Management version 3<br>        Capabilities: [50] MSI: Enable- Count&#x3D;1&#x2F;1 Maskable+ 64bit+<br>        Capabilities: [70] MSI-X: Enable+ Count&#x3D;10 Masked-<br>        Capabilities: [a0] Express Endpoint, MSI 00<br>        Capabilities: [100] Advanced Error Reporting<br>        Capabilities: [140] Device Serial Number 2c-53-4a-ff-ff-05-bd-42<br>        Capabilities: [150] Alternative Routing-ID Interpretation (ARI)<br>        <strong>Capabilities: [160] Single Root I&#x2F;O Virtualization (SR-IOV)</strong><br>        Capabilities: [1a0] Transaction Processing Hints<br>        Capabilities: [1c0] Latency Tolerance Reporting<br>        Capabilities: [1d0] Access Control Services<br>        <strong>Kernel driver in use: igb</strong><br>        <strong>Kernel modules: igb</strong></p>
+<p>01:00.1 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)<br>……</p>
+<p>01:00.2 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)<br>……</p>
+<p>01:00.3 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)<br>……</p>
+</blockquote>
+<ul>
+<li>**Capabilities: [160] Single Root I&#x2F;O Virtualization (SR-IOV)**：支持SR-IOV<ul>
+<li>如果没有这个，说明不支持SR-IOV，如果硬件确实支持，而系统没有识别，请更新网卡固件</li>
+</ul>
+</li>
+<li><strong>Kernel driver in use: igb</strong>、<strong>Kernel modules: igb</strong>：使用<code>igb</code>驱动</li>
+</ul>
+<p>查看网卡名称：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:~# ip l<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000<br>    link&#x2F;loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>2: enp6s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master vmbr0 state UP mode DEFAULT group default qlen 1000<br>    link&#x2F;ether 38:d5:47:10:d3:4f brd ff:ff:ff:ff:ff:ff<br>3: <strong>enp1s0f0</strong>: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000<br>    link&#x2F;ether 2c:53:4a:05:bd:42 brd ff:ff:ff:ff:ff:ff<br>4: <strong>enp1s0f1</strong>: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000<br>    link&#x2F;ether 2c:53:4a:05:bd:43 brd ff:ff:ff:ff:ff:ff<br>5: <strong>enp1s0f2</strong>: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000<br>    link&#x2F;ether 2c:53:4a:05:bd:44 brd ff:ff:ff:ff:ff:ff<br>6: <strong>enp1s0f3</strong>: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000<br>    link&#x2F;ether 2c:53:4a:05:bd:45 brd ff:ff:ff:ff:ff:ff<br>7: vmbr0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000<br>    link&#x2F;ether 38:d5:47:10:d3:4f brd ff:ff:ff:ff:ff:ff</p>
+</blockquote>
+<p>查看网卡固件版本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ethtool</span> <span class="token parameter variable">-i</span> <span class="token operator">&lt;</span>网卡名称<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:~# ethtool -i enp1s0f0<br>driver: igb<br>version: 6.2.11-1-pve<br><strong>firmware-version: 0.93, 0x800005fd</strong><br>expansion-rom-version:<br>bus-info: 0000:01:00.0<br>supports-statistics: yes<br>supports-test: yes<br>supports-eeprom-access: yes<br>supports-register-dump: yes<br>supports-priv-flags: yes</p>
+</blockquote>
+<p>经过查询，说是需要升级固件版本到15.x以上，但看淘宝详情页说支持SR-IOV，原来在ESXI里面也启用过，杂牌网卡不敢乱搞，所以没有升级</p>
+<p><strong>开启网卡设备SR-IOV</strong></p>
+<p>进入设备目录</p>
+<p>PCI：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /sys/bus/pci/devices/<span class="token operator">&lt;</span>PCI地址，如0000:01:00.<span class="token operator"><span class="token file-descriptor important">0</span>></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>或网卡名称</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /sys/class/net/<span class="token operator">&lt;</span>网卡名称，如enp1s0f<span class="token operator"><span class="token file-descriptor important">0</span>></span>/device<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>获取最大vf数量</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> sriov_totalvfs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:&#x2F;sys&#x2F;bus&#x2F;pci&#x2F;devices&#x2F;0000:01:00.0# cat sriov_totalvfs<br>7</p>
+</blockquote>
+<p>回显数量是7，说明支持开启7个vf</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token number">7</span> <span class="token operator">></span> sriov_numvfs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>root@pve:&#x2F;sys&#x2F;bus&#x2F;pci&#x2F;devices&#x2F;0000:01:00.0# echo 7 &gt; sriov_numvfs<br>-bash: echo: 写错误: 无法分配内存</p>
+</blockquote>
+<p><strong>第二种方法</strong></p>
+<p>我这边没有成功，提示“无法分配内存”，需要修改modprobe，或直接修改grub启动选项，参考第二种方法：</p>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av338824462">https://www.bilibili.com/video/av338824462</a></p>
+<p>sr-iov在pve下的配置，主要配置有&#x2F;etc&#x2F;default&#x2F;grub添加的内容如下，有千兆与万兆区别：</p>
+<ul>
+<li>ixgbe模块：intel_iommu&#x3D;on,igfx_off iommu&#x3D;pt pcie_acs_override&#x3D;downstream,multifunction ixgbe.max_vfs&#x3D;10 pci&#x3D;realloc,assign-busses</li>
+<li>igb模块：intel_iommu&#x3D;on,igfx_off iommu&#x3D;pt pcie_acs_override&#x3D;downstream,multifunction igb.max_vfs&#x3D;7 pci&#x3D;realloc,assign-busses</li>
+</ul>
+</blockquote>
+<p>实际上，根据本文前面的配置，只需要追加：<code>pcie_acs_override=downstream,multifunction igb.max_vfs=7 pci=realloc,assign-busses</code>，关于<code>pci=realloc,assign-busses</code>：</p>
+<blockquote>
+<p>有的老主板没有SR-IOV选项的，需要传内核参数处理PCI，例如pci&#x3D;assign-busses,有些第三方光模块可能还需要pci&#x3D;realloc，如果2个都需要处理，那么就写成pci&#x3D;realloc,assign-busses</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /etc/default/grub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt i915.enable_gvt&#x3D;1 pcie_acs_override&#x3D;downstream,multifunction igb.max_vfs&#x3D;7 pci&#x3D;realloc,assign-busses”</p>
+</blockquote>
+<p>然后更新一下grub和内核的配置，重启</p>
+<p><strong>遇到问题</strong></p>
+<p>重启后，我这边管理口的网卡名称变了，导致外部连不上PVE，还好之前给PVE装了LXDE和Firefox，通过PVE机器的Firefox重新调整了一下网卡设置才恢复，如果没有安装浏览器，需要手动更换绑定vmbr0的网卡</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://wiki.debian.org/NetworkConfiguration">https://wiki.debian.org/NetworkConfiguration</a></p>
+<p>由于PVE没有使用NetworkManager等现代组件管理网络，而是使用ifupdown2，所以只需编辑：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /etc/network/interfaces<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>（待测）如果需要PVE支持DHCPv6，可以加上</p>
+<blockquote>
+<p>iface vmbr0 inet6 dhcp</p>
+</blockquote>
+</blockquote>
+<p><strong>最终结果</strong></p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250508/99682/33/34450/261001/6459fadaF723d6cb1/dc00e3e929b060c9.png"></p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250508/119136/7/33704/243019/6459fb0bFb82981d3/92b7ac2ae1ab324d.png"></p>
+<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t20250508/62014/10/20154/571954/6459fb5aF74f10be9/242cfbd428ab1c0b.png"></p>
+<p>另外需要注意，这个网卡的PCI地址并不是按照网卡顺序来的，需要使用以下命令查看VF对应的PF：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lshw <span class="token parameter variable">-class</span> net <span class="token parameter variable">-businfo</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>还有，调整完VF的数量以后，还需要使用上述命令重新查看网卡PCI地址，调整各个VM的网卡PCI地址</p>
+<p>此外，对于网卡MAC地址的固化，目前本人没有研究过，请自行百度</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://foxi.buduanwang.vip/yj/561.html">https://foxi.buduanwang.vip/yj/561.html</a></p>
+<h2 id="四、进阶玩法"><a href="#四、进阶玩法" class="headerlink" title="四、进阶玩法"></a>四、进阶玩法</h2><h3 id="1、安装LXDE桌面环境"><a href="#1、安装LXDE桌面环境" class="headerlink" title="1、安装LXDE桌面环境"></a>1、安装LXDE桌面环境</h3><p>安装图形界面，方便管理，家庭用户建议安装</p>
+<h4 id="设置locale"><a href="#设置locale" class="headerlink" title="设置locale"></a>设置locale</h4><p>添加 locale <code>zh_CN.UTF-8 UTF-8</code>，设定默认 locale 为中文<code>zh_CN.UTF-8</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dpkg-reconfigure locales<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="安装LXDE"><a href="#安装LXDE" class="headerlink" title="安装LXDE"></a>安装LXDE</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> lxde-core lxterminal fonts-noto-cjk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="安装常用软件"><a href="#安装常用软件" class="headerlink" title="安装常用软件"></a>安装常用软件</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> firefox-esr firefox-esr-l10n-zh-cn synaptic remmina virt-viewer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><input checked="" disabled="" type="checkbox"> firefox-esr：火狐长期支持版<ul>
+<li><input checked="" disabled="" type="checkbox"> firefox-esr-l10n-zh-cn：火狐长期支持版中文语言包</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> synaptic：新立得软件包管理器</li>
+<li><input checked="" disabled="" type="checkbox"> remmina：远程桌面</li>
+<li><input checked="" disabled="" type="checkbox"> virt-viewer：spice远程桌面客户端</li>
+<li><input disabled="" type="checkbox"> mousepad：xfce默认文本编辑器</li>
+</ul>
+<h5 id="安装中文拼音输入法"><a href="#安装中文拼音输入法" class="headerlink" title="安装中文拼音输入法"></a>安装中文拼音输入法</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> fcitx5 fcitx5-chinese-addons fcitx5-frontend-gtk3 fcitx5-frontend-qt5 fcitx5-module-xorg im-config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>以上的包会占用1.5GB左右空间，系统运行时内存占用不到100MB</p>
+<blockquote>
+<p>BUG：LXDE如果安装了完整版，需要禁用connman，不然会与PVE冲突，造成断网</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl stop connman
+systemctl disable connman<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</blockquote>
+<h4 id="添加非root用户"><a href="#添加非root用户" class="headerlink" title="添加非root用户"></a>添加非root用户</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">useradd</span> <span class="token parameter variable">-m</span> user <span class="token parameter variable">-s</span> /bin/bash <span class="token parameter variable">-d</span> /home/user<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="设置用户密码"><a href="#设置用户密码" class="headerlink" title="设置用户密码"></a>设置用户密码</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">passwd</span> user <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="完成后重启"><a href="#完成后重启" class="headerlink" title="完成后重启"></a>完成后重启</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">reboot</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="（不建议）安装WPS"><a href="#（不建议）安装WPS" class="headerlink" title="（不建议）安装WPS"></a>（不建议）安装WPS</h4><p>Firefox访问：<a target="_blank" rel="noopener" href="https://linux.wps.cn/">https://linux.wps.cn/</a> ，下载对应架构最新WPS Office For Linux Deb格式安装包</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;下载
+sudo dpkg -i wps-office_11.1.0.11698_amd64.deb
+sudo apt --fix-broken install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="（不建议）安装docker"><a href="#（不建议）安装docker" class="headerlink" title="（不建议）安装docker"></a>（不建议）安装docker</h4><p>不建议在宿主机上直接安装docker，会给后面网络配置带来麻烦。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> docker.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="安装Portainer-CE"><a href="#安装Portainer-CE" class="headerlink" title="安装Portainer CE"></a>安装Portainer CE</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> volume create portainer_data
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">8000</span>:8000 <span class="token parameter variable">-p</span> <span class="token number">9443</span>:9443 <span class="token parameter variable">--name</span> portainer <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token parameter variable">-v</span> portainer_data:/data portainer/portainer-ce:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="设置开机自启项目"><a href="#设置开机自启项目" class="headerlink" title="设置开机自启项目"></a>设置开机自启项目</h4><p>开始菜单&#x3D;&gt;首选项&#x3D;&gt;LXSession 默认应用程序&#x3D;&gt;自动启动</p>
+<p>手动设为自动启动的程序：</p>
+<ol>
+<li>取消<code>@xscreensaver</code>关闭屏保</li>
+<li>添加<code>@firefox-esr -kiosk -private-window https://127.0.0.1:8006</code>自动打开Proxmox VE Web后台</li>
+<li>添加<code>@xfreerdp /v:&lt;RDP主机地址&gt; /u:&lt;RDP用户&gt; /p:&lt;RDP密码&gt; /audio /gfx:AVC420 /f </code>自动打开RDP远程桌面</li>
+</ol>
+<h4 id="（不建议）Lightdm-openbox自定义桌面环境"><a href="#（不建议）Lightdm-openbox自定义桌面环境" class="headerlink" title="（不建议）Lightdm + openbox自定义桌面环境"></a>（不建议）Lightdm + openbox自定义桌面环境</h4><p><strong>大小差不多，建议直接LXDE</strong></p>
+<p>中文环境配置，添加locale为zh_CN.UTF-8 UTF-8，设定默认 locale 为中文zh_CN.UTF-8：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dpkg-reconfigure locales<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装 Lightdm 桌面管理器及相关字体：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> lightdm openbox fonts-noto-cjk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装GUI常用工具：</p>
+<pre class="line-numbers language-none"><code class="language-none">apt install lxterminal firefox-esr firefox-esr-l10n-zh-cn synaptic<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>创建用户：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">useradd</span> <span class="token parameter variable">-m</span> user <span class="token parameter variable">-s</span> /bin/bash <span class="token parameter variable">-d</span> /home/user
+<span class="token function">passwd</span> user<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>创建用户组：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupadd</span> <span class="token parameter variable">-r</span> autologin
+gpasswd <span class="token parameter variable">-a</span> user autologin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>配置自动登录：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> /etc/lightdm/lightdm.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Seat:*</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">user-session</span><span class="token punctuation">=</span><span class="token value attr-value">openbox</span>
+<span class="token key attr-name">autologin-user</span><span class="token punctuation">=</span><span class="token value attr-value">user</span>
+<span class="token key attr-name">autologin-session</span><span class="token punctuation">=</span><span class="token value attr-value">openbox</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>配置 openbox 的启动项：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> ~/.config/openbox
+<span class="token function">cp</span> <span class="token parameter variable">-a</span> /etc/xdg/openbox/ ~/.config/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/whyliu_/article/details/124017844">https://blog.csdn.net/whyliu_/article/details/124017844</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.404bugs.com/details/1077554175264215040">https://www.404bugs.com/details/1077554175264215040</a></p>
+<h3 id="2、PVE查找硬盘文件位置"><a href="#2、PVE查找硬盘文件位置" class="headerlink" title="2、PVE查找硬盘文件位置"></a>2、PVE查找硬盘文件位置</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root@pve:~<span class="token comment"># pvesm path local:123/vm-123-disk-0.qcow2</span>
+/var/lib/vz/images/123/vm-123-disk-0.qcow2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="3、内核管理"><a href="#3、内核管理" class="headerlink" title="3、内核管理"></a>3、内核管理</h3><p>直通报错？尝试换个内核！</p>
+<h4 id="查看已安装内核"><a href="#查看已安装内核" class="headerlink" title="查看已安装内核"></a>查看已安装内核</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dpkg --get-selections <span class="token operator">|</span><span class="token function">grep</span> kernel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="查看当前内核"><a href="#查看当前内核" class="headerlink" title="查看当前内核"></a>查看当前内核</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">uname</span> <span class="token parameter variable">-a</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="查找内核"><a href="#查找内核" class="headerlink" title="查找内核"></a>查找内核</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> search pve-kernel<span class="token operator">|</span><span class="token function">grep</span> pve-kernel-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-cache</span> search linux <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'PVE Kernel Image'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> pve-kernel-5.13.19-4-pve<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="查看当前系统内核启动顺序"><a href="#查看当前系统内核启动顺序" class="headerlink" title="查看当前系统内核启动顺序"></a>查看当前系统内核启动顺序</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> menuentry /boot/grub/grub.cfg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="修改内核启动顺序"><a href="#修改内核启动顺序" class="headerlink" title="修改内核启动顺序"></a>修改内核启动顺序</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nano</span> /etc/default/grub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>把默认的<code>GRUB_DEFAULT=“0”</code>改为</p>
+<blockquote>
+<p>GRUB_DEFAULT&#x3D;”Advanced options for Proxmox VE GNU&#x2F;Linux&gt;Proxmox VE GNU&#x2F;Linux, with Linux 5.13.19-4-pve”</p>
+</blockquote>
+<p>更新引导并重启</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">update-grub</span>
+<span class="token function">reboot</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="4、虚拟内存"><a href="#4、虚拟内存" class="headerlink" title="4、虚拟内存"></a>4、虚拟内存</h3><h4 id="创建SWAP文件"><a href="#创建SWAP文件" class="headerlink" title="创建SWAP文件"></a>创建SWAP文件</h4><p>创建一个16G的swap，bs * count &#x3D;16G</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">dd</span> <span class="token assign-left variable">if</span><span class="token operator">=</span>/dev/zero <span class="token assign-left variable">of</span><span class="token operator">=</span>/swapfile <span class="token assign-left variable">bs</span><span class="token operator">=</span>1G <span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>注意，这个swapfile存放在根目录下</p>
+</blockquote>
+<p>配置安全的权限</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chmod</span> 0600 /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>格式化成swap</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkswap</span> /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>挂载swap</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">swapon</span> /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>验证</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">free</span> <span class="token parameter variable">-h</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="Swap策略"><a href="#Swap策略" class="headerlink" title="Swap策略"></a>Swap策略</h4><h5 id="临时调整swap策略"><a href="#临时调整swap策略" class="headerlink" title="临时调整swap策略"></a>临时调整swap策略</h5><p>方法1:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@PVE ~<span class="token punctuation">]</span><span class="token comment"># sysctl vm.swappiness=10</span>
+vm.swappiness <span class="token operator">=</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>方法2:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@PVE ~<span class="token punctuation">]</span><span class="token comment"># echo 10 > /proc/sys/vm/swappiness</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="永久更改swappiness值"><a href="#永久更改swappiness值" class="headerlink" title="永久更改swappiness值"></a>永久更改swappiness值</h5><p>要想永久调整的话，需要在&#x2F;etc&#x2F;sysctl.conf修改，加上：</p>
+<blockquote>
+<p>vm.swappiness&#x3D;10</p>
+</blockquote>
+<p>验证</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@PVE ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/sysctl.conf</span>
+<span class="token assign-left variable">vm.swappiness</span><span class="token operator">=</span><span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>激活设置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@PVE ~<span class="token punctuation">]</span><span class="token comment"># sysctl -p</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="5、PXE网启文件制作"><a href="#5、PXE网启文件制作" class="headerlink" title="5、PXE网启文件制作"></a>5、PXE网启文件制作</h3><p>这里只记录文件制作，具体怎么使用网启、怎样配置DHCP服务器，不在本篇暂不讨论，最多附一下编译 iPXE 所用到的软件包：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> gcc binutils <span class="token function">make</span> perl <span class="token function">mtools</span> <span class="token function">mkisofs</span> syslinux liblzma-dev isolinux<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://github.com/morph027/pve-iso-2-pxe">https://github.com/morph027/pve-iso-2-pxe</a></p>
+<p>首先需要准备一台 Linux 机器，建议使用 Debian 环境</p>
+<p>获取脚本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-O</span> pve-iso-2-pxe.sh https://ghproxy.com/https://raw.githubusercontent.com/morph027/pve-iso-2-pxe/master/pve-iso-2-pxe.sh
+<span class="token function">chmod</span> +x pve-iso-2-pxe.sh <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>安装相关软件包：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> cpio <span class="token function">file</span> zstd <span class="token function">gzip</span> genisoimage<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>下载最新ISO：</p>
+<p><a target="_blank" rel="noopener" href="http://proxmox.com/downloads">http://proxmox.com/downloads</a></p>
+<p><a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/proxmox/iso/">http://mirrors.ustc.edu.cn/proxmox/iso/</a></p>
+<p>以ISO文件路径为参数，运行 <code>pve-iso-2-pxe.sh</code> 脚本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">┌──<span class="token punctuation">(</span>user㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/桌面<span class="token punctuation">]</span>
+└─$ <span class="token function">bash</span> pve-iso-2-pxe.sh proxmox-ve_7.4-1.iso
+
+<span class="token comment">#########################################################################################################</span>
+<span class="token comment"># Create PXE bootable Proxmox image including ISO                                                       #</span>
+<span class="token comment">#                                                                                                       #</span>
+<span class="token comment"># Author: mrballcb @ Proxmox Forum (06-12-2012)                                                         #</span>
+<span class="token comment"># Thread: http://forum.proxmox.com/threads/8484-Proxmox-installation-via-PXE-solution?p=55985#post55985 #</span>
+<span class="token comment"># Modified: morph027 @ Proxmox Forum (23-02-2015) to work with 3.4                                      #</span>
+<span class="token comment">#########################################################################################################</span>
+
+Using proxmox-ve_7.4-1.iso<span class="token punctuation">..</span>.
+extracting kernel<span class="token punctuation">..</span>.
+extracting initrd<span class="token punctuation">..</span>.
+adding iso <span class="token function">file</span> <span class="token punctuation">..</span>.
+<span class="token number">2193089</span> 块
+Finished<span class="token operator">!</span> pxeboot files can be found <span class="token keyword">in</span> /home/user/桌面.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此时，ISO文件的同级目录会创建一个 <code>pxeboot</code> 文件夹，里面包含 <code>linux26</code> 和 <code>initrd</code> 两个文件</p>
+<p><img src="https://img03.mifile.cn/v1/MI_542ED8B1722DC/0f05676a25129a0a0b5b3073b0e409a7.png"></p>
+<p>我们将它们上传到文件下载服务器，然后使用以下 iPXE 脚本进行引导：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#!ipxe</span>
+dhcp
+<span class="token builtin class-name">set</span> webserver http://10.0.2.1:5244/d/Cloud/System/Linux/VM
+
+menu Please choose a version to boot
+item <span class="token number">7</span>.X Proxmox-VE <span class="token number">7</span>.X
+item <span class="token number">6</span>.X Proxmox-VE <span class="token number">6</span>.X
+item <span class="token number">5</span>.X Proxmox-VE <span class="token number">5</span>.X
+choose <span class="token parameter variable">--default</span> <span class="token number">7</span>.X <span class="token parameter variable">--timeout</span> <span class="token number">5000</span> target <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">set</span> pveversion <span class="token variable">$&#123;target&#125;</span>
+
+menu Please choose an operating system to boot
+item normal Install Proxmox-VE <span class="token variable">$&#123;pveversion&#125;</span>
+item debug Install Proxmox-VE <span class="token variable">$&#123;pveversion&#125;</span> <span class="token punctuation">(</span>Debug Mode<span class="token punctuation">)</span>
+choose <span class="token parameter variable">--default</span> normal <span class="token parameter variable">--timeout</span> <span class="token number">5000</span> target <span class="token operator">&amp;&amp;</span> goto <span class="token variable">$&#123;target&#125;</span>
+
+:debug
+initrd <span class="token variable">$&#123;webserver&#125;</span>/proxmox/<span class="token variable">$&#123;pveversion&#125;</span>/initrd
+chain <span class="token variable">$&#123;webserver&#125;</span>/proxmox/<span class="token variable">$&#123;pveversion&#125;</span>/linux26 <span class="token assign-left variable">vga</span><span class="token operator">=</span><span class="token number">791</span> <span class="token assign-left variable">video</span><span class="token operator">=</span>vesafb:ywrap,mtrr <span class="token assign-left variable">ramdisk_size</span><span class="token operator">=</span><span class="token number">16777216</span> rw quiet <span class="token assign-left variable">initrd</span><span class="token operator">=</span>initrd <span class="token assign-left variable">splash</span><span class="token operator">=</span>verbose proxdebug
+goto end
+
+:normal
+initrd <span class="token variable">$&#123;webserver&#125;</span>/proxmox/<span class="token variable">$&#123;pveversion&#125;</span>/initrd
+chain <span class="token variable">$&#123;webserver&#125;</span>/proxmox/<span class="token variable">$&#123;pveversion&#125;</span>/linux26 <span class="token assign-left variable">vga</span><span class="token operator">=</span><span class="token number">791</span> <span class="token assign-left variable">video</span><span class="token operator">=</span>vesafb:ywrap,mtrr <span class="token assign-left variable">ramdisk_size</span><span class="token operator">=</span><span class="token number">16777216</span> rw quiet <span class="token assign-left variable">initrd</span><span class="token operator">=</span>initrd <span class="token assign-left variable">splash</span><span class="token operator">=</span>silent
+goto end
+
+:end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>注意要点：</strong></p>
+<ul>
+<li><p>推荐文件服务器使用 Alist 本地挂载，尽量别用 Tiny PXE Server 的龟速 HTTPd（有些时候比 TFTP 还慢）；</p>
+</li>
+<li><p>不要使用 HTTPS 协议的文件服务器或 HTTPS 协议的网盘的转链，如有必要必须使用 HTTPS，请在编译 iPXE 前编辑 <code>ipxe/src/config/general.h</code> ，将 <code>#undef DOWNLOAD_PROTO_HTTPS</code> 改为 <code>#define DOWNLOAD_PROTO_HTTPS</code>；</p>
+</li>
+<li><p>路径中请勿包含空格；</p>
+</li>
+<li><p>请勿使用引号 <code>&quot;</code> 对启动参数进行引用（原文中的脚本是无法使用的，一定要写死）</p>
+</li>
+<li><p>如果一直卡在<code>............</code>，或提示 <code>Operation not supported</code>，说明 iPXE 下载错误（通常 <code>initrd</code> 文件在 1GB 以上，下载那么快肯定不正常），请检查服务器是否被正确搭建，iPXE 是否正确开启 HTTPS 支持</p>
+</li>
+</ul>
+<p><strong>效果展示：</strong></p>
+<p><img src="https://img03.mifile.cn/v1/MI_542ED8B1722DC/e5136a74571545be54fc142419483b45.png" alt="版本号选择"></p>
+<p><img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/406e336d5702df5f5540fd83ea1ad881.png" alt="启动模式选择"></p>
+<p><img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/9507d3122276154e247a4dd8a283b0a6.png" alt="iPXE HTTP协议下载"></p>
+<p><img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/50f374bc5a34876b9f0beb72feec92eb.png" alt="PVE 7.4实测可用"></p>
+<p><img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/f508cb90a775c2fa2fefe9dcf1fdaebc.png" alt="虚拟机内测试"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">狂犬主子</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://xrgzs.github.io/posts/pve-cmd.html">https://xrgzs.github.io/posts/pve-cmd.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">狂犬主子</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/debian/">
+                                    <span class="chip bg-color">Debian</span>
+                                </a>
+                            
+                                <a href="/tags/proxmox-ve/">
+                                    <span class="chip bg-color">Proxmox VE</span>
+                                </a>
+                            
+                                <a href="/tags/pve/">
+                                    <span class="chip bg-color">PVE</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                    <span class="chip bg-color">虚拟机</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/">
+                                    <span class="chip bg-color">虚拟化</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/xrpe.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/de669c1ba93f963a6cc5b130b4b0a1fb.png" class="responsive-img" alt="潇然PE启动 Xiaoran PE">
+                        
+                        <span class="card-title">潇然PE启动 Xiaoran PE</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            不止 Windows PE
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/" class="post-category">
+                                    潇然工作室
+                                </a>
+                            
+                            <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/" class="post-category">
+                                    Windows
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
+                        <span class="chip bg-color">潇然工作室</span>
+                    </a>
+                    
+                    <a href="/tags/xiaoran-studio/">
+                        <span class="chip bg-color">Xiaoran Studio</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">潇然系统</span>
+                    </a>
+                    
+                    <a href="/tags/xiaoran-system/">
+                        <span class="chip bg-color">Xiaoran System</span>
+                    </a>
+                    
+                    <a href="/tags/windows/">
+                        <span class="chip bg-color">Windows</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
+                    </a>
+                    
+                    <a href="/tags/winpe/">
+                        <span class="chip bg-color">WinPE</span>
+                    </a>
+                    
+                    <a href="/tags/xiaoran-pe/">
+                        <span class="chip bg-color">Xiaoran PE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/arch-linux-install.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img03.mifile.cn/v1/MI_542ED8B1722DC/a7e24ae30082978cb698a8b1c75cc90f.jpg" class="responsive-img" alt="Arch Linux 安装">
+                        
+                        <span class="card-title">Arch Linux 安装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            个人整理笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
+                    </a>
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/arch-linux/">
+                        <span class="chip bg-color">Arch Linux</span>
+                    </a>
+                    
+                    <a href="/tags/pacman/">
+                        <span class="chip bg-color">pacman</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('200')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 潇然工作室<br />'
+            + '文章作者: 狂犬主子<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2017-2023</span>
+            
+            <a href="/about" target="_blank">Xiaoran Studio</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">61.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+                <span id="SSL">
+                本站支持&nbsp;<a href="https://ipw.cn/ipv6webcheck/?site=www.xrgzs.top" target='_blank'>IPv6</a>&nbsp;访问
+                |&nbsp;本站支持&nbsp;<a href="https://ipw.cn/ssl/?site=www.xrgzs.top" target='_blank'>SSL安全</a>&nbsp;访问
+            </span>
+            <!-- 运行天数提醒. -->
+            
+            
+            <br></br>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xrgzs" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:dalizxr@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2744460679" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2744460679" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script src="https://myhkw.cn/api/player/165943534482" id="myhk" key="165943534482" ></script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lightgallery/1.10.0/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://xrgzs.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
