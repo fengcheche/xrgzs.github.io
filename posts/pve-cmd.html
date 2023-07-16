@@ -396,7 +396,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-16
+                    2023-07-17
                 </div>
                 
 
@@ -606,7 +606,7 @@ dump  images  private  snippets  template<span aria-hidden="true" class="line-nu
 <blockquote>
 <p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt i915.enable_gvt&#x3D;1”</p>
 </blockquote>
-<p>J3455等分组不正常，需要开启ACS改为：</p>
+<p>开启ACS改为：</p>
 <blockquote>
 <p>GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet intel_iommu&#x3D;on iommu&#x3D;pt pcie_acs_override&#x3D;downstream”</p>
 </blockquote>
@@ -645,6 +645,9 @@ dump  images  private  snippets  template<span aria-hidden="true" class="line-nu
 <span class="token builtin class-name">echo</span> <span class="token string">"blacklist nvidia"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf 
 <span class="token builtin class-name">echo</span> <span class="token string">"blacklist nvidiafb"</span> <span class="token operator">>></span> /etc/modprobe.d/blacklist.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<p>解决增加PCI设备后虚拟机无法启动</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"options vfio_iommu_type1 allow_unsafe_interrupts=1"</span> <span class="token operator">>></span> /etc/modprobe.d/pve-blacklist.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="3、绑定vfio"><a href="#3、绑定vfio" class="headerlink" title="3、绑定vfio"></a>3、绑定vfio</h3><p><font color=red><strong>通常无需执行此步骤！</strong></font></p>
 <h4 id="查看自己的显卡、声卡的PCI地址、did和vid"><a href="#查看自己的显卡、声卡的PCI地址、did和vid" class="headerlink" title="查看自己的显卡、声卡的PCI地址、did和vid"></a>查看自己的显卡、声卡的PCI地址、did和vid</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lspci <span class="token parameter variable">-nn</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -674,11 +677,11 @@ dump  images  private  snippets  template<span aria-hidden="true" class="line-nu
 <p>对于Nvidia显卡，避免一些莫名其妙的错误，需要：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"options kvm ignore_msrs=1"</span> <span class="token operator">></span> /etc/modprobe.d/kvm.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="更新grub和内核"><a href="#更新grub和内核" class="headerlink" title="更新grub和内核"></a>更新grub和内核</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">update-grub</span>
+<h3 id="5、更新grub和内核"><a href="#5、更新grub和内核" class="headerlink" title="5、更新grub和内核"></a>5、更新grub和内核</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">update-grub</span>
 update-initramfs <span class="token parameter variable">-k</span> all <span class="token parameter variable">-u</span>
 <span class="token function">reboot</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="5、验证是否开启iommu"><a href="#5、验证是否开启iommu" class="headerlink" title="5、验证是否开启iommu"></a>5、验证是否开启iommu</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">dmesg</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-e</span> DMAR <span class="token parameter variable">-e</span> IOMMU <span class="token parameter variable">-e</span> AMD-Vi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="验证是否开启iommu"><a href="#验证是否开启iommu" class="headerlink" title="验证是否开启iommu"></a>验证是否开启iommu</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">dmesg</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-e</span> DMAR <span class="token parameter variable">-e</span> IOMMU <span class="token parameter variable">-e</span> AMD-Vi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>出现如下例子，则代表成功：</p>
 <blockquote>
@@ -1563,7 +1566,7 @@ goto end
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">61.4k</span>
+                        class="white-color">61.5k</span>
             
             
             
