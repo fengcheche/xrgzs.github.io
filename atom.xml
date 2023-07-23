@@ -197,9 +197,9 @@
     
     <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
-    
     <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
     <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
     
@@ -562,9 +562,9 @@
     <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
     
     
-    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
-    
     <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
     <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
@@ -628,9 +628,9 @@
     <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
     
     
-    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
-    
     <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
     <category term="证书" scheme="https://xrgzs.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
     
