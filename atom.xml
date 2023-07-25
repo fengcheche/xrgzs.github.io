@@ -6,7 +6,7 @@
   <link href="https://xrgzs.github.io/atom.xml" rel="self"/>
   
   <link href="https://xrgzs.github.io/"/>
-  <updated>2023-07-24T06:49:49.446Z</updated>
+  <updated>2023-07-24T18:27:11.880Z</updated>
   <id>https://xrgzs.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>潇然PE启动 Xiaoran PE</title>
+    <link href="https://xrgzs.github.io/xrpe.html"/>
+    <id>https://xrgzs.github.io/xrpe.html</id>
+    <published>2023-07-25T00:30:40.000Z</published>
+    <updated>2023-07-24T18:27:11.880Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;潇然PE启动-Xiaoran-PE&quot;&gt;&lt;a href=&quot;#潇然PE启动-Xiaoran-PE&quot; class=&quot;headerlink&quot; title=&quot;潇然PE启动 Xiaoran PE&quot;&gt;&lt;/a&gt;潇然PE启动 Xiaoran</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
+    
+    <category term="潇然系统" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Xiaoran System" scheme="https://xrgzs.github.io/tags/xiaoran-system/"/>
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="WinPE" scheme="https://xrgzs.github.io/tags/winpe/"/>
+    
+    <category term="Xiaoran PE" scheme="https://xrgzs.github.io/tags/xiaoran-pe/"/>
+    
+  </entry>
   
   <entry>
     <title>潇然系统 Xiaoran System</title>
@@ -58,7 +99,7 @@
     <link href="https://xrgzs.github.io/xrok.html"/>
     <id>https://xrgzs.github.io/xrok.html</id>
     <published>2023-07-09T11:30:38.000Z</published>
-    <updated>2023-07-24T14:31:37.680Z</updated>
+    <updated>2023-07-25T13:52:41.122Z</updated>
     
     
       
@@ -93,47 +134,6 @@
     <category term="Xiaoran Onekey" scheme="https://xrgzs.github.io/tags/xiaoran-onekey/"/>
     
     <category term="系统安装" scheme="https://xrgzs.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>潇然PE启动 Xiaoran PE</title>
-    <link href="https://xrgzs.github.io/xrpe.html"/>
-    <id>https://xrgzs.github.io/xrpe.html</id>
-    <published>2023-07-08T10:30:40.000Z</published>
-    <updated>2023-07-19T09:08:09.265Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;潇然PE启动-Xiaoran-PE&quot;&gt;&lt;a href=&quot;#潇然PE启动-Xiaoran-PE&quot; class=&quot;headerlink&quot; title=&quot;潇然PE启动 Xiaoran PE&quot;&gt;&lt;/a&gt;潇然PE启动 Xiaoran</summary>
-        
-      
-    
-    
-    
-    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
-    
-    <category term="Windows" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/"/>
-    
-    
-    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
-    
-    <category term="Xiaoran Studio" scheme="https://xrgzs.github.io/tags/xiaoran-studio/"/>
-    
-    <category term="潇然系统" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="Xiaoran System" scheme="https://xrgzs.github.io/tags/xiaoran-system/"/>
-    
-    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
-    
-    <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="WinPE" scheme="https://xrgzs.github.io/tags/winpe/"/>
-    
-    <category term="Xiaoran PE" scheme="https://xrgzs.github.io/tags/xiaoran-pe/"/>
     
   </entry>
   
@@ -197,9 +197,9 @@
     
     <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
-    
     <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
     <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
     
