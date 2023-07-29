@@ -180,9 +180,9 @@
             
             <tag> 操作系统 </tag>
             
-            <tag> Arch Linux </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> Arch Linux </tag>
             
             <tag> pacman </tag>
             
@@ -546,11 +546,11 @@
             
             <tag> CentOS </tag>
             
-            <tag> 服务器运维 </tag>
-            
             <tag> 硬盘扩容 </tag>
             
             <tag> xfs </tag>
+            
+            <tag> 服务器运维 </tag>
             
         </tags>
       
@@ -612,11 +612,11 @@
             
             <tag> CentOS </tag>
             
+            <tag> 服务器运维 </tag>
+            
             <tag> 证书 </tag>
             
             <tag> curl </tag>
-            
-            <tag> 服务器运维 </tag>
             
         </tags>
       
