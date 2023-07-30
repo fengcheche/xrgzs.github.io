@@ -6,7 +6,7 @@
   <link href="https://xrgzs.github.io/atom.xml" rel="self"/>
   
   <link href="https://xrgzs.github.io/"/>
-  <updated>2023-07-28T07:00:12.064Z</updated>
+  <updated>2023-07-30T17:07:06.880Z</updated>
   <id>https://xrgzs.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>潇然PE启动 Xiaoran PE</title>
     <link href="https://xrgzs.github.io/xrpe.html"/>
     <id>https://xrgzs.github.io/xrpe.html</id>
-    <published>2023-07-28T07:00:40.000Z</published>
-    <updated>2023-07-28T07:00:12.064Z</updated>
+    <published>2023-07-30T22:30:40.000Z</published>
+    <updated>2023-07-30T17:07:06.880Z</updated>
     
     
       
@@ -197,9 +197,9 @@
     
     <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
-    
     <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
     <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
     
@@ -299,11 +299,11 @@
     
     <category term="Alist" scheme="https://xrgzs.github.io/tags/alist/"/>
     
+    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
+    
     <category term="NAT" scheme="https://xrgzs.github.io/tags/nat/"/>
     
     <category term="Docker" scheme="https://xrgzs.github.io/tags/docker/"/>
-    
-    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
     
     <category term="DSM" scheme="https://xrgzs.github.io/tags/dsm/"/>
     
@@ -677,6 +677,66 @@
     <category term="代码" scheme="https://xrgzs.github.io/tags/%E4%BB%A3%E7%A0%81/"/>
     
     <category term="公式" scheme="https://xrgzs.github.io/tags/%E5%85%AC%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下自动挂载群晖Nas（通过CIFS）</title>
+    <link href="https://xrgzs.github.io/posts/linux-mount-cifs.html"/>
+    <id>https://xrgzs.github.io/posts/linux-mount-cifs.html</id>
+    <published>2022-08-01T15:22:50.000Z</published>
+    <updated>2023-07-30T07:09:47.374Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Linux下自动挂载群晖Nas（通过CIFS）&quot;&gt;&lt;a href=&quot;#Linux下自动挂载群晖Nas（通过CIFS）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络" scheme="https://xrgzs.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/categories/%E7%BD%91%E7%BB%9C/linux/"/>
+    
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
+    
+    <category term="smb" scheme="https://xrgzs.github.io/tags/smb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Windows、Office激活</title>
+    <link href="https://xrgzs.github.io/posts/activation-of-windows-office.html"/>
+    <id>https://xrgzs.github.io/posts/activation-of-windows-office.html</id>
+    <published>2022-06-29T08:41:46.000Z</published>
+    <updated>2023-07-30T07:45:27.529Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;关于Windows、Office激活&quot;&gt;&lt;a href=&quot;#关于Windows、Office激活&quot; class=&quot;headerlink&quot; title=&quot;关于Windows、Office激活&quot;&gt;&lt;/a&gt;关于Windows、Office激活&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/categories/windows/"/>
+    
+    
+    <category term="Windows" scheme="https://xrgzs.github.io/tags/windows/"/>
+    
+    <category term="Office" scheme="https://xrgzs.github.io/tags/office/"/>
+    
+    <category term="激活" scheme="https://xrgzs.github.io/tags/%E6%BF%80%E6%B4%BB/"/>
     
   </entry>
   
