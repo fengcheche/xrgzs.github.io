@@ -404,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-31
+                    2023-08-01
                 </div>
                 
 
@@ -523,11 +523,14 @@ chain http:&#x2F;&#x2F;url.xrgzs.top&#x2F;ipxe<span aria-hidden="true" class="li
 </li>
 <li>支持自动安装 VMware Tools，修复了对 Hyper-V 虚拟机支持，Vbox Guest 组件可到 HotPE 模块管理在线下载安装；<ul>
 <li>VMware虚拟机下自动设置分辨率为 1366x768，优化体验，其它默认1024x768，UEFI另当别论</li>
+<li>修复了虚拟机下资源管理器无法打开CD-ROM的问题（不影响第三方程序）</li>
 </ul>
 </li>
 </ul>
 <p><strong>功能：</strong>预置了 BootICE、CGI、DG分区、DISM++、WinNTSetup 等多款维护工具，增加右键 FastCopy、Everything，Notepad2、WinSnap</p>
 <ul>
+<li><p>降级 CGI 到 5.0.0.5 JexChan 版，解决无法正常调用 Wimlib-Imagex 的问题；</p>
+</li>
 <li><p>支持额外软件从快捷方式、浏览器、HotPE 模块管理在线下载安装，建议设置虚拟内存（开始菜单有相关工具）；</p>
 <ul>
 <li>没有硬件检测工具，如有需要可以直接从 HotPE 模块下载，或直接复制潇然常用工具到 U 盘</li>
@@ -539,7 +542,7 @@ chain http:&#x2F;&#x2F;url.xrgzs.top&#x2F;ipxe<span aria-hidden="true" class="li
 </li>
 <li><p>使用 PENetwork 加载网络，连接网络 SMB 共享更方便，托盘显示 IPv6 和 DNS 信息，中文 Wi-Fi 名称会显示乱码；</p>
 </li>
-<li><p>调整默认颜色模式为浅色、DWM 标题颜色为默认颜色（蓝色），微调StartisBack，更换太阳谷图标（来自 pc521）、鼠标光标（来自 FirPE），增加初始化 PE 界面（PECMD LOGO）、 X 盘 WinPE 专属图标；</p>
+<li><p>调整默认颜色模式为浅色、DWM 标题颜色为默认颜色（蓝色），微调StartisBack，更换太阳谷图标（来自 pc521）、鼠标光标（来自 FirPE），增加初始化 PE 界面（PECMD LOGO）、 X 盘 WinPE 专属图标，去除快捷方式小箭头；</p>
 </li>
 <li><p>支持 PXE 自动任务，<del>能够自动向 TFTP 服务器查询下载脚本，无需 iPXE</del>（TFTP.exe因为暂时没需求被砍掉）</p>
 </li>
@@ -1059,7 +1062,7 @@ chain http:&#x2F;&#x2F;url.xrgzs.top&#x2F;ipxe<span aria-hidden="true" class="li
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">86.9k</span>
+                        class="white-color">87k</span>
             
             
             
