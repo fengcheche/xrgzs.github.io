@@ -197,9 +197,9 @@
     
     <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
-    
     <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
     <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
     
@@ -299,11 +299,11 @@
     
     <category term="Alist" scheme="https://xrgzs.github.io/tags/alist/"/>
     
+    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
+    
     <category term="NAT" scheme="https://xrgzs.github.io/tags/nat/"/>
     
     <category term="Docker" scheme="https://xrgzs.github.io/tags/docker/"/>
-    
-    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
     
     <category term="DSM" scheme="https://xrgzs.github.io/tags/dsm/"/>
     

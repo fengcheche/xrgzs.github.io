@@ -180,9 +180,9 @@
             
             <tag> 操作系统 </tag>
             
-            <tag> Linux </tag>
-            
             <tag> Arch Linux </tag>
+            
+            <tag> Linux </tag>
             
             <tag> pacman </tag>
             
@@ -281,11 +281,11 @@
             
             <tag> Alist </tag>
             
+            <tag> 群晖 </tag>
+            
             <tag> NAT </tag>
             
             <tag> Docker </tag>
-            
-            <tag> 群晖 </tag>
             
             <tag> DSM </tag>
             
