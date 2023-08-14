@@ -6,7 +6,7 @@
   <link href="https://xrgzs.github.io/atom.xml" rel="self"/>
   
   <link href="https://xrgzs.github.io/"/>
-  <updated>2023-08-05T11:59:11.401Z</updated>
+  <updated>2023-08-14T10:23:05.280Z</updated>
   <id>https://xrgzs.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xrgzs.github.io/xrpe.html"/>
     <id>https://xrgzs.github.io/xrpe.html</id>
     <published>2023-07-30T22:30:40.000Z</published>
-    <updated>2023-08-05T11:59:11.401Z</updated>
+    <updated>2023-08-14T10:23:05.280Z</updated>
     
     
       
@@ -197,9 +197,9 @@
     
     <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
-    
     <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
+    
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
     <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
     
@@ -299,17 +299,17 @@
     
     <category term="Alist" scheme="https://xrgzs.github.io/tags/alist/"/>
     
-    <category term="OpenWrt" scheme="https://xrgzs.github.io/tags/openwrt/"/>
+    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
     
     <category term="NAT" scheme="https://xrgzs.github.io/tags/nat/"/>
     
     <category term="Docker" scheme="https://xrgzs.github.io/tags/docker/"/>
     
-    <category term="群晖" scheme="https://xrgzs.github.io/tags/%E7%BE%A4%E6%99%96/"/>
-    
     <category term="DSM" scheme="https://xrgzs.github.io/tags/dsm/"/>
     
     <category term="Lucky" scheme="https://xrgzs.github.io/tags/lucky/"/>
+    
+    <category term="OpenWrt" scheme="https://xrgzs.github.io/tags/openwrt/"/>
     
     <category term="打洞技术" scheme="https://xrgzs.github.io/tags/%E6%89%93%E6%B4%9E%E6%8A%80%E6%9C%AF/"/>
     
@@ -566,11 +566,11 @@
     
     <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
     <category term="硬盘扩容" scheme="https://xrgzs.github.io/tags/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
     
     <category term="xfs" scheme="https://xrgzs.github.io/tags/xfs/"/>
-    
-    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
@@ -632,11 +632,11 @@
     
     <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
-    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
-    
     <category term="证书" scheme="https://xrgzs.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
     
     <category term="curl" scheme="https://xrgzs.github.io/tags/curl/"/>
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   

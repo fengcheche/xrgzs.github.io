@@ -404,21 +404,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-05
+                    2023-08-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -510,7 +510,7 @@ chain http:&#x2F;&#x2F;url.xrgzs.top&#x2F;ipxe<span aria-hidden="true" class="li
 <p><img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/91d3e699f41e625f129235ad5e42b3c9.png" alt="iPXE Cloud"></p>
 <p><strong>重新修改的 Ryanboot，更新了版本，并更换部分镜像源解决了连通性问题，让你装各种 Linux 发行版不再烦恼</strong></p>
 <p><img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/bf6bcfadfa7086d2d2a4b662253f5dd4.png" alt="ryanboot-mod"></p>
-<h3 id="Win10-22H2-19045-3208-PE-x64-630MB-网络版"><a href="#Win10-22H2-19045-3208-PE-x64-630MB-网络版" class="headerlink" title="Win10 22H2 19045.3208 PE x64 630MB 网络版"></a>Win10 22H2 19045.3208 PE x64 630MB 网络版</h3><p><strong>本人使用 WinpeMaker 生成的 PE，7月重大更新，后期由于个人没时间懒得折腾将修改自其它优秀作品</strong></p>
+<h3 id="（暂时弃用）Win10-22H2-19045-3208-PE-x64-630MB-网络版"><a href="#（暂时弃用）Win10-22H2-19045-3208-PE-x64-630MB-网络版" class="headerlink" title="（暂时弃用）Win10 22H2 19045.3208 PE x64 630MB 网络版"></a>（暂时弃用）Win10 22H2 19045.3208 PE x64 630MB 网络版</h3><p><strong>本人使用 WinpeMaker 生成的 PE，7月重大更新，后期由于个人没时间懒得折腾将修改自其它优秀作品</strong></p>
 <p><strong>母盘：</strong><code>zh-cn_windows_10_business_editions_version_22h2_updated_july_2023_x64_dvd_62f461c9.iso</code></p>
 <ul>
 <li>升级内核版本，支持 UEFI 安全启动的新密钥（未验证）</li>
@@ -540,17 +540,45 @@ chain http:&#x2F;&#x2F;url.xrgzs.top&#x2F;ipxe<span aria-hidden="true" class="li
 <li>支持 PXE 自动任务，<del>能够自动向 TFTP 服务器查询下载脚本，无需 iPXE</del>（TFTP.exe因为暂时没需求被砍掉）</li>
 </ul>
 <p><strong>美化：</strong>不定期更换必应自然风光壁纸，支持右键在线更换壁纸，调整默认颜色模式为浅色、DWM 标题颜色为默认颜色（蓝色），微调StartisBack，更换太阳谷图标（来自 pc521）、鼠标光标（来自 FirPE），增加初始化 PE 界面（PECMD LOGO）、 X 盘 WinPE 专属图标，去除快捷方式小箭头；</p>
-<p><strong>提示：启动至少需要 1.3GB 内存，适合 4GB 及以上机器使用！</strong></p>
 <p><strong>壁纸：</strong>来自于 wallpaperhub.app，不定期更换，系统界面请以实际为准</p>
+<p><strong>提示：启动至少需要 1.3GB 内存，适合 4GB 及以上机器使用！</strong></p>
 <p><img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/6b1b9be2547705eb7f068e03b337ec12.jpg" alt="桌面"></p>
 <p><img src="https://img03.mifile.cn/v1/MI_542ED8B1722DC/0342d8a8f26396f2eb856df40abcdd31.jpg" alt="开始菜单"></p>
+<h3 id="Win11-22H2-22621-2070-PE-x64-630MB-网络版"><a href="#Win11-22H2-22621-2070-PE-x64-630MB-网络版" class="headerlink" title="Win11 22H2 22621.2070 PE x64 630MB 网络版"></a>Win11 22H2 22621.2070 PE x64 630MB 网络版</h3><p><strong>使用Kuer大师的内核，用着非常稳定，且此版组件较为完整</strong></p>
+<p><strong>母盘：</strong><a target="_blank" rel="noopener" href="http://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=431951&extra=&page=1">KuerPE_Win11_22621.2070_摄像头.声网_多功能.适度精简_0812.iso</a></p>
+<ul>
+<li>内核升级到22621.2070正式版</li>
+<li>mstsc(远程桌面连接)</li>
+<li>ISCSI功能</li>
+<li>MTP(USB连接手机进行文件共享)</li>
+<li>RNDIS(使用手机共享网络)</li>
+<li>Microsoft Windows Installer(MSI)</li>
+<li>BitLocker 磁盘加锁 磁盘解锁</li>
+<li>VBS支持</li>
+<li>WMI 配合外置包wbem 支持APFS</li>
+<li>网络共享</li>
+<li>原生安全移除硬件(弹出USB设备)功能</li>
+<li>程序兼容性属性</li>
+<li>声网服务,自带有线网卡驱动</li>
+<li>集成VC++ 8,9 运行库</li>
+<li>摄像头功能：录影-画面、声音！截屏！</li>
+<li>麦克风：支持EV录屏-录制音频_麦和系统声音！</li>
+<li>增加大量Intel+AMD——io+disk驱动！</li>
+<li>内置工具：7z2019x64(集成右键）、微软截图、微软画图、微软输入法指针、极点五笔输入法，计算器，FastCopy、orderdrv、获取哈希值(集成右键)</li>
+<li>内核说明：为方便部分坛友运行更多的程序，内核没做极限精简、几乎所有大块头文件都保留了，体积大了几十MB，不需要保留的坛友请自行删减！</li>
+</ul>
+<p><strong>功能：</strong>尽量与 64 位 PE 保持一致体验</p>
+<p><strong>提示：启动至少需要 1.3GB 内存，适合 4GB 及以上机器使用！</strong></p>
+<p><img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/d425539d0f72198dae256f32c308cce5.jpg"></p>
+<p><img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/9e5d1d0ad5e4ab3353d0547655ed795b.jpg"></p>
 <h3 id="Win10-21H1-19043-844-PE-x86-300MB-网络版"><a href="#Win10-21H1-19043-844-PE-x86-300MB-网络版" class="headerlink" title="Win10 21H1 19043.844 PE x86 300MB 网络版"></a>Win10 21H1 19043.844 PE x86 300MB 网络版</h3><p><strong>使用Kuer大师的内核，用着非常稳定</strong></p>
 <p><strong>母盘：</strong><a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=431383">KuerPE_Win10x86_NET.MTP+RNDIS+ISCSI_0612.iso</a></p>
+<ul>
+<li>支持MTP(USB连接手机进行文件共享)、RNDIS(USB连接手机使用手机共享网络)、网启ISCSI</li>
+</ul>
 <p><strong>功能：</strong>尽量与 64 位 PE 保持一致体验</p>
 <ul>
-<li>支持MTP(USB连接手机进行文件共享)、RNDIS(USB连接手机使用手机共享网络)、网启ISCSI；</li>
 <li>支持自动安装 VMware Tools，修复了对 Hyper-V 虚拟机支持；</li>
-<li>可能不支持 PXE 自动任务（估计是没用 wpeinit.exe 造成的，暂时没需求懒得修）</li>
 <li>精简了部分网卡驱动，体积减少到 280MB</li>
 </ul>
 <p><strong>提示：768MB内存可极限启动，推荐 1-2GB 内存机器使用！</strong> </p>
@@ -1056,7 +1084,7 @@ chain http:&#x2F;&#x2F;url.xrgzs.top&#x2F;ipxe<span aria-hidden="true" class="li
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">88.9k</span>
+                        class="white-color">89.2k</span>
             
             
             
