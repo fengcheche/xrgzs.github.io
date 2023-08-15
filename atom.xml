@@ -6,7 +6,7 @@
   <link href="https://xrgzs.github.io/atom.xml" rel="self"/>
   
   <link href="https://xrgzs.github.io/"/>
-  <updated>2023-08-14T10:23:05.280Z</updated>
+  <updated>2023-08-15T10:43:05.124Z</updated>
   <id>https://xrgzs.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>低头的只是我的肉体</title>
+    <link href="https://xrgzs.github.io/emo/2023-08-15.html"/>
+    <id>https://xrgzs.github.io/emo/2023-08-15.html</id>
+    <published>2023-08-15T10:30:26.000Z</published>
+    <updated>2023-08-15T10:43:05.124Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;低头的只是我的肉体，灵魂永远昂首挺胸&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="心情" scheme="https://xrgzs.github.io/categories/%E5%BF%83%E6%83%85/"/>
+    
+    
+    <category term="心情" scheme="https://xrgzs.github.io/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>潇然PE启动 Xiaoran PE</title>
@@ -197,9 +225,9 @@
     
     <category term="操作系统" scheme="https://xrgzs.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
-    
     <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
+    
+    <category term="Arch Linux" scheme="https://xrgzs.github.io/tags/arch-linux/"/>
     
     <category term="pacman" scheme="https://xrgzs.github.io/tags/pacman/"/>
     
@@ -566,11 +594,11 @@
     
     <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
-    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
-    
     <category term="硬盘扩容" scheme="https://xrgzs.github.io/tags/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
     
     <category term="xfs" scheme="https://xrgzs.github.io/tags/xfs/"/>
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
@@ -632,11 +660,11 @@
     
     <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    
     <category term="证书" scheme="https://xrgzs.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
     
     <category term="curl" scheme="https://xrgzs.github.io/tags/curl/"/>
-    
-    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   

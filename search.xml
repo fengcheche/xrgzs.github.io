@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>低头的只是我的肉体</title>
+      <link href="/emo/2023-08-15.html"/>
+      <url>/emo/2023-08-15.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>低头的只是我的肉体，灵魂永远昂首挺胸</p></blockquote><p><img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/87299055fc4e802df62b54144c9e96f4.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 心情 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 心情 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>潇然PE启动 Xiaoran PE</title>
       <link href="/xrpe.html"/>
       <url>/xrpe.html</url>
@@ -180,9 +205,9 @@
             
             <tag> 操作系统 </tag>
             
-            <tag> Arch Linux </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> Arch Linux </tag>
             
             <tag> pacman </tag>
             
@@ -546,11 +571,11 @@
             
             <tag> CentOS </tag>
             
-            <tag> 服务器运维 </tag>
-            
             <tag> 硬盘扩容 </tag>
             
             <tag> xfs </tag>
+            
+            <tag> 服务器运维 </tag>
             
         </tags>
       
@@ -612,11 +637,11 @@
             
             <tag> CentOS </tag>
             
+            <tag> 服务器运维 </tag>
+            
             <tag> 证书 </tag>
             
             <tag> curl </tag>
-            
-            <tag> 服务器运维 </tag>
             
         </tags>
       
