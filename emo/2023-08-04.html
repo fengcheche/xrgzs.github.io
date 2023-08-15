@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="OpenWrt,iStoreOS,X-WRT,IPv6,NAT6">
-    <meta name="description" content="OpenWrt系统配置NAT6">
+    <meta name="keywords" content="网站事务">
+    <meta name="description" content="后会无期">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6 | 潇然工作室</title>
+    <title>以后可能的“再见” | 潇然工作室</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img07.mifile.cn/v1/MI_542ED8B1722DC/ffc4403c9b3c182323a082b2ed696256.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img06.mifile.cn/v1/MI_542ED8B1722DC/ab03870605bbe32f3113e75754d2abe8.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6</h1>
+                    <h1 class="description center-align post-title">以后可能的“再见”</h1>
                 </div>
             </div>
         </div>
@@ -340,24 +340,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ipv6/">
-                                <span class="chip bg-color">IPv6</span>
+                            <a href="/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
+                                <span class="chip bg-color">潇然工作室</span>
                             </a>
                         
-                            <a href="/tags/openwrt/">
-                                <span class="chip bg-color">OpenWrt</span>
-                            </a>
-                        
-                            <a href="/tags/istoreos/">
-                                <span class="chip bg-color">iStoreOS</span>
-                            </a>
-                        
-                            <a href="/tags/x-wrt/">
-                                <span class="chip bg-color">X-WRT</span>
-                            </a>
-                        
-                            <a href="/tags/nat6/">
-                                <span class="chip bg-color">NAT6</span>
+                            <a href="/tags/%E7%BD%91%E7%AB%99%E4%BA%8B%E5%8A%A1/">
+                                <span class="chip bg-color">网站事务</span>
                             </a>
                         
                     </div>
@@ -368,8 +356,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C/" class="post-category">
-                                网络
+                            <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/" class="post-category">
+                                潇然工作室
                             </a>
                         
                     </div>
@@ -381,28 +369,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-16
+                    2023-08-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-26
+                    2023-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    955
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
 
@@ -430,101 +418,76 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="OpenWrt-iStoreOS-X-WRT-配置-IPv6-NAT6"><a href="#OpenWrt-iStoreOS-X-WRT-配置-IPv6-NAT6" class="headerlink" title="OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6"></a>OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6</h1><h2 id="为什么要使用NAT6？"><a href="#为什么要使用NAT6？" class="headerlink" title="为什么要使用NAT6？"></a>为什么要使用NAT6？</h2><p>通常情况下，IPv6为每个设备都配备了公网IPv6地址。公网IPv6地址数量很多，黑客用枚举法一时半会儿扫不进来。但是，随着量子计算机的发展，未来这一优势将会进一步减弱。</p>
-<p>在缺乏网络安全管理的家庭、中小企业中，通常会使用IPv6进行外网远程访问，一些设备由于系统精简、年份较老，如果没有配置好详细的防火墙规则，就会被黑客扫描破解。在量子计算机发展普及的将来，这些攻击将会变得轻而易举。</p>
-<p>IPv6在正式普及用起来之前，反而算是一片攻击者的蓝海。</p>
-<p>为了提高安全性，同时兼具IPv6升级，我们可以考虑在IPv6网络中使用NAT技术。</p>
-<p>此外，一些地区的宽带拨号后没有下发DHCPv6-PD前缀信息，而是直接下发64位IPv6地址，路由器无法分配IPv6地址（当然可以把IPv6相关选项设置成relay模式，但获取的IPv6地址不是你路由器分配的）。</p>
-<h2 id="OpenWrt系统配置NAT6"><a href="#OpenWrt系统配置NAT6" class="headerlink" title="OpenWrt系统配置NAT6"></a>OpenWrt系统配置NAT6</h2><p>1、安装并更新软件包。</p>
-<pre class="line-numbers language-none"><code class="language-none">opkg update
-opkg install ip6tables
-opkg install kmod-ipt-nat6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>这几个包通常是默认安装的。</p>
-<p>2、修改ULA前缀。</p>
-<p>这个在IPv6中近似于IPv4的LAN口内网地址。</p>
-<p>默认情况下，iStoreOS、X-WRT等系统在第一次启动时会随机生成好ULA前缀，因此我们可以直接跳到第3步。</p>
-<p>修改<code>/etc/config/network</code>文件中的<code>ula_prefix</code>，如果已有内容，无需修改，直接<code>:q</code>退出。</p>
-<pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;config&#x2F;network<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="以后可能的“再见”"><a href="#以后可能的“再见”" class="headerlink" title="以后可能的“再见”"></a>以后可能的“再见”</h1><p>首先在此说明，本站提供的项目仅供本人娱乐，同时也是本人目前的精神支柱和心灵寄托，经过长期的思考和激烈的思想斗争，后续本人需要换个方式生活，放长远看，今后也有别的事情要做，虽然非常不舍，但终究还是分别</p>
+<h2 id="先配个乐"><a href="#先配个乐" class="headerlink" title="先配个乐"></a>先配个乐</h2><p>张震岳 - 再见.mp3</p>
+<audio src="https://alist.xrgzs.top/d/pxy/uploads/media/20230803001.mp3" controls autoplay>
+</audio>
 
-<pre class="line-numbers language-none"><code class="language-none">config globals &#39;globals&#39;
-	option ula_prefix &#39;fd38:eb73:c847::&#x2F;48&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>如果此时重启网络或OpenWrt系统，下联的设备会获取到ULA前缀开头的64位和128位IPv6地址。</p>
-<p>3、配置DHCPv6。</p>
-<p>这步千万不能省！！！！！！！</p>
-<p>修改<code>/etc/config/dhcp</code>文件中lan口的DHCPv6配置，如果已有多余的内容，建议从<code>option dhcpv6</code>开始删除替换。</p>
-<pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;config&#x2F;dhcp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<h2 id="说件大事"><a href="#说件大事" class="headerlink" title="说件大事"></a>说件大事</h2><p>本站将采取分步走的形式，将心火逐渐熄灭，大胆预告项目上<strong>可能会有一些调整</strong>：</p>
+<ol>
+<li><p>潇然系统部署接口、潇然系统优化组件将于 2023 年底进入维护状态，将进行功能合并与精简，2026 年彻底停止维护，会将所有脚本开放处理（虽然批处理脚本本身就已经公开），本人不再接管该项目</p>
+</li>
+<li><p>潇然一键装机助理在 2024 年底不再提供潇然系统在线构建服务，仅提供原版镜像，且维护频率会降低，在2026 年底前尽量保持可用状态</p>
+</li>
+<li><p>潇然 PE 启动将直接由其他 PE 修改而来，不再自行构建</p>
+</li>
+<li><p><del>由于”工作室“这几个字难听，像极某些不好的东西，潇然工作室将于 2026 年后依实际情况解散</del></p>
+</li>
+</ol>
+<p><em>如果遇上政策性变动，该进程可能会被动性地加快</em></p>
+<hr>
+<h2 id="讲讲建站经历"><a href="#讲讲建站经历" class="headerlink" title="讲讲建站经历"></a>讲讲建站经历</h2><ul>
+<li><p>本站在 2017 年通过 <a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a> 部署，使用 <a target="_blank" rel="noopener" href="https://www.mdui.org/">mdui</a> 框架编写</p>
+<ul>
+<li>后采用 Typora 博客框架，也增加了一些文章<ul>
+<li>这些文章非刻意编写，均来自于本人电脑整理桌面时发现的 .txt 备忘录，不想私藏，发出来供大家参考，对不对无所谓，随你们怎么喷</li>
+</ul>
+</li>
+<li>为了提高网站的安全性，避免被恶意攻击篡改注入，后改用 hexo 静态生成，且关闭评论</li>
+</ul>
+</li>
+<li><p>为了提供文件下载服务，注册了花生壳内网穿透域名 xrgzs.6655.la，一直使用 NAS 部署</p>
+<ul>
+<li>本站主要目的还是提供文件下载服务，一直都不会变</li>
+</ul>
+</li>
+<li><p>2022 年为了提高用户访问体验，购买了 xrgzs.top 域名</p>
+</li>
+<li><p>为了使用国内服务器，提高访问速度，2023 年进行过 ICP 备案</p>
+<ul>
+<li><p>由于本人对政策合规性的忽视，没有思考过：</p>
+<ul>
+<li><p>本站为个人非盈利网站</p>
+</li>
+<li><p>精力和财力物力有限</p>
+</li>
+<li><p>完全不可能完成相关合规性评测</p>
+</li>
+<li><p>没有能力履行相关义务，承担相关责任</p>
+</li>
+</ul>
+</li>
+<li><p>本人积极配合相关检查工作，于2023年5月注销了境内备案，关闭并退订了服务器，不再承担作为境内网络运营者的相关责任</p>
+</li>
+</ul>
+</li>
+<li><p>本站从一开始就使用静态建站，目前 xrgzs.top 还能暂时通过 CNAME 到 <a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a> 苟延残喘，直到域名过期后，仍能通过 xrgzs.github.io 访问</p>
+</li>
+</ul>
+<hr>
+<h2 id="梦话开始"><a href="#梦话开始" class="headerlink" title="梦话开始"></a>梦话开始</h2><p>虽能够挽回一时，但不能挽留一世，分别是迟早的事</p>
+<p>根据形势，网络安全管理审计将来一定会越来越严格，本人做梦预测到未来3到5年整体网络环境可能会发生重大改变，梦到咱们可能会学某 Country，某 Province，采取白名单策略进行严管严控，根据年龄限制，连境内备案的网站都不一定打得开</p>
+<p>到时候本站将会被qiáng　制整改（懂），不可能存活下去</p>
+<p><strong>所以，后会无期吧</strong></p>
+<p>G.E.M. 邓紫棋 - 后会无期.mp3</p>
+<audio src="https://alist.xrgzs.top/d/pxy/uploads/media/20230803002.mp3" controls>
+</audio>
 
-<pre class="line-numbers language-none"><code class="language-none">config dhcp &#39;lan&#39;
-	option interface &#39;lan&#39;
-	option start &#39;100&#39;
-	option limit &#39;150&#39;
-	option leasetime &#39;12h&#39;
-	option dhcpv4 &#39;server&#39;
-	option dhcpv6 &#39;server&#39;
-	option ra &#39;server&#39;
-	option ra_management &#39;1&#39;
-	option ra_default &#39;1&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>建议从第六行就开始覆盖替换，别自作聪明，直接在浏览器里面用LuCI修改，太强大了你把持不住的。千万别开混合模式。</p>
-<p>4、打开IPv6 NAT。</p>
-<p>默认情况下，X-WRT在“网络-&gt;防火墙-&gt;NAT 规则”里面配置好一条名为“nat6”的规则，默认没有启用，我们勾选“启用”，然后点击页面下方的“保存并应用”即可完成配置。</p>
-<p>还有些系统，支持FullCone NAT6，虽然支持有限，但建议开启。</p>
-<p>其它系统需要修改<code>/etc/firewall.user</code>脚本，自定义防火墙规则。</p>
-<p>方法一：http:&#x2F;&#x2F;路由器的IP地址&#x2F;cgi-bin&#x2F;luci&#x2F;admin&#x2F;network&#x2F;firewall&#x2F;custom</p>
-<p>方法二：<code>vi /etc/firewall.user</code></p>
-<pre class="line-numbers language-none"><code class="language-none">WAN6&#x3D;这里填写IPv6 WAN6口的网卡名称，如eth0
-LAN&#x3D;这里填写LAN口的网卡名称，一般就填br-lan
-ip6tables -t nat -A POSTROUTING -o $WAN6 -j MASQUERADE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>安全起见，下面两条不建议添加，基本不影响使用：</p>
-<pre class="line-numbers language-none"><code class="language-none">ip6tables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-ip6tables -A FORWARD -i $LAN -j ACCEPT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>5、正确配置网关。</p>
-<p><strong>这是本文的重点。</strong></p>
-<p>在路由器上看一下自己的默认网关。</p>
-<pre class="line-numbers language-none"><code class="language-none">ip -6 route show default<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">default from 2409:8a6c:5722:daf1::52c via fe80::213:32ff:fe09:216d dev eth0 proto static metric 512 pref medium
-default from 2409:8a6c:5722:daf1::&#x2F;64 via fe80::213:32ff:fe09:216d dev eth0 proto static metric 512 pref medium<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>如果获得的是这样坑爹的网关，在转发NAT包的时候会有问题，需要创建一个脚本<code>/etc/hotplug.d/iface/99-ipv6</code>，把去掉<code>from 2409:8a6c:5722:daf1::52c</code>这一部分的以后的默认路由添加到路由表中。</p>
-<pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;99-ipv6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>网上的教程中，基本上都只获取到一个IPv6地址，如SLAAC或DHCPv6无状态，然而我这边有两个IPv6地址，如DHCPv6有状态+无状态，即使上级路由也有ULA前缀，但实际上网关地址都相同，这回使获取到的信息重复，从而配置无效。<strong>用网上的脚本都会出现这个问题</strong> ，自己手动添加路由又正常，就是这个原因导致的。</p>
-<p>下面的脚本我已经修改过，只会使用获取到的第一个IPv6地址的网关地址及信息，<strong>均测试有效</strong> 。</p>
-<p>第一种：</p>
-<pre class="line-numbers language-none"><code class="language-none">#!&#x2F;bin&#x2F;sh
-[ &quot;$ACTION&quot; &#x3D; ifup ] || exit 0
-ip -6 route add &#96;ip -6 route show default|sed -e &#39;s&#x2F;from [^ ]* &#x2F;&#x2F;&#39;|sed -n &#39;1p&#39;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>第二种：</p>
-<pre class="line-numbers language-none"><code class="language-none">#!&#x2F;bin&#x2F;sh
-[ &quot;$ACTION&quot; &#x3D; ifup ] || exit 0
-route -A inet6 add default gw &#96;(ip -6 route | grep default | awk &#39;&#123;print $5,$6,$7&#125;&#39; | sed -n &#39;1p&#39;)&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>设置权限：</p>
-<pre class="line-numbers language-none"><code class="language-none">chmod +x &#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;99-ipv6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>6、重启路由器使配置生效。</p>
-<pre class="line-numbers language-none"><code class="language-none">reboot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>7、开启IPv6 DNS解析。</p>
-<p>默认情况下，X-WRT已经开启IPv6 DNS解析。</p>
-<p>其它系统需要浏览器访问http:&#x2F;&#x2F;路由器的IP地址&#x2F;cgi-bin&#x2F;luci&#x2F;admin&#x2F;network&#x2F;dhcp ，点击高级设置，取消“禁止解析 IPv6 DNS 记录”，然后点击页面下方的“保存并应用”。</p>
-<p>8、测试。</p>
-<p>http:&#x2F;&#x2F;[上一层的IPv6网络设备地址]</p>
-<p><a target="_blank" rel="noopener" href="http://ch.test-ipv6.com/">http://ch.test-ipv6.com/</a></p>
-<p><a target="_blank" rel="noopener" href="http://ipv6-test.ch/">http://ipv6-test.ch/</a></p>
-<p>如果ipv6-test已出IPv4地址，5秒内未出IPv6地址，那么基本上失败，不用继续等待。</p>
-<p>如果第5步网关配置错误，会表现为上一层的IPv6网络设备正常访问，上上层的网络设备（公网）无法访问，ipv6-test失败。</p>
-<p>这种情况可以尝试更改<code>/etc/hotplug.d/iface/99-ipv6</code>文件<code>sed -n &#39;1p&#39;</code>中的<code>1</code>。</p>
-<p>正常情况下，ipv6-test应该可以正常（10&#x2F;10）通过，显示的 IPv6 地址为上级路由的 IPv6 地址。</p>
-<p>不过这个IPv6的NAT目前还有一些问题，而且相关问题和应用开发的积极性不高，毕竟这与IPv6要消除NAT的初衷相悖，不过对于多线聚合等应用还是有一定意义。相信以后随着IPv6的普及和大佬的进一步研究，以及在企业等大型公共网络中的部署，肯定会出现更完善甚至更独特的解决方案。</p>
-<p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/network/ipv6/ipv6.nat6">https://openwrt.org/docs/guide-user/network/ipv6/ipv6.nat6</a></p>
-<p><a target="_blank" rel="noopener" href="https://tang.su/2017/03/openwrt-ipv6-nat/">https://tang.su/2017/03/openwrt-ipv6-nat/</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2a5e0ba31835">https://www.jianshu.com/p/2a5e0ba31835</a></p>
+<hr>
+<blockquote>
+<p><em>以上内容纯属个人 放屁 瞎扯蛋 说梦话 胡说八道，凌晨四点 梦醒十分 随感而发，切勿认真，也希望这种事情不会真的发生，呜呜呜(＞＜)</em></p>
+</blockquote>
 
                 
             </div>
@@ -551,7 +514,7 @@ route -A inet6 add default gw &#96;(ip -6 route | grep default | awk &#39;&#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xrgzs.github.io/posts/openwrt-istoreos-x-wrt-config-ipv6-nat6.html">https://xrgzs.github.io/posts/openwrt-istoreos-x-wrt-config-ipv6-nat6.html</a>
+                    <a href="https://xrgzs.github.io/emo/2023-08-04.html">https://xrgzs.github.io/emo/2023-08-04.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -589,24 +552,12 @@ route -A inet6 add default gw &#96;(ip -6 route | grep default | awk &#39;&#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ipv6/">
-                                    <span class="chip bg-color">IPv6</span>
+                                <a href="/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
+                                    <span class="chip bg-color">潇然工作室</span>
                                 </a>
                             
-                                <a href="/tags/openwrt/">
-                                    <span class="chip bg-color">OpenWrt</span>
-                                </a>
-                            
-                                <a href="/tags/istoreos/">
-                                    <span class="chip bg-color">iStoreOS</span>
-                                </a>
-                            
-                                <a href="/tags/x-wrt/">
-                                    <span class="chip bg-color">X-WRT</span>
-                                </a>
-                            
-                                <a href="/tags/nat6/">
-                                    <span class="chip bg-color">NAT6</span>
+                                <a href="/tags/%E7%BD%91%E7%AB%99%E4%BA%8B%E5%8A%A1/">
+                                    <span class="chip bg-color">网站事务</span>
                                 </a>
                             
                         </div>
@@ -653,30 +604,82 @@ route -A inet6 add default gw &#96;(ip -6 route | grep default | awk &#39;&#123;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/xrsys-build-image.html">
+                <a href="/emo/2023-08-15.html">
                     <div class="card-image">
                         
-                        <img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/e4ece4bebeabfbf521443ec12824fe7b.jpg" class="responsive-img" alt="潇然系统镜像构建教程">
+                        <img src="https://img08.mifile.cn/v1/MI_542ED8B1722DC/87299055fc4e802df62b54144c9e96f4.jpg" class="responsive-img" alt="低头的只是我的肉体">
                         
-                        <span class="card-title">潇然系统镜像构建教程</span>
+                        <span class="card-title">低头的只是我的肉体</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            灵魂永远昂首挺胸
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-15
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BF%83%E6%83%85/" class="post-category">
+                                    心情
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%83%E6%83%85/">
+                        <span class="chip bg-color">心情</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/xrpe.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img07.mifile.cn/v1/MI_542ED8B1722DC/de669c1ba93f963a6cc5b130b4b0a1fb.png" class="responsive-img" alt="潇然PE启动 Xiaoran PE">
+                        
+                        <span class="card-title">潇然PE启动 Xiaoran PE</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            不一样的启动体验
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/" class="post-category">
                                     潇然工作室
+                                </a>
+                            
+                            <a href="/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/windows/" class="post-category">
+                                    Windows
                                 </a>
                             
                             
@@ -710,60 +713,12 @@ route -A inet6 add default gw &#96;(ip -6 route | grep default | awk &#39;&#123;
                         <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/tvbox.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/697ef38fa1d5569b01cd55747c3a9a8f.jpg" class="responsive-img" alt="某盒子汁源">
-                        
-                        <span class="card-title">某盒子汁源</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            只有聪明的人才看得懂
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%B5%84%E6%BA%90/" class="post-category">
-                                    资源
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%B5%84%E6%BA%90/">
-                        <span class="chip bg-color">资源</span>
+                    <a href="/tags/winpe/">
+                        <span class="chip bg-color">WinPE</span>
                     </a>
                     
-                    <a href="/tags/%E5%BD%B1%E8%A7%86/">
-                        <span class="chip bg-color">影视</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BD%B1%E9%9F%B3/">
-                        <span class="chip bg-color">影音</span>
+                    <a href="/tags/xiaoran-pe/">
+                        <span class="chip bg-color">Xiaoran PE</span>
                     </a>
                     
                 </div>

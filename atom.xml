@@ -6,7 +6,7 @@
   <link href="https://xrgzs.github.io/atom.xml" rel="self"/>
   
   <link href="https://xrgzs.github.io/"/>
-  <updated>2023-08-15T10:43:05.124Z</updated>
+  <updated>2023-08-15T11:12:27.812Z</updated>
   <id>https://xrgzs.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xrgzs.github.io/emo/2023-08-15.html"/>
     <id>https://xrgzs.github.io/emo/2023-08-15.html</id>
     <published>2023-08-15T10:30:26.000Z</published>
-    <updated>2023-08-15T10:43:05.124Z</updated>
+    <updated>2023-08-15T11:12:27.812Z</updated>
     
     
       
@@ -41,6 +41,33 @@
     
     
     <category term="心情" scheme="https://xrgzs.github.io/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>以后可能的“再见”</title>
+    <link href="https://xrgzs.github.io/emo/2023-08-04.html"/>
+    <id>https://xrgzs.github.io/emo/2023-08-04.html</id>
+    <published>2023-08-03T20:39:46.000Z</published>
+    <updated>2023-08-15T11:15:37.827Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;以后可能的“再见”&quot;&gt;&lt;a href=&quot;#以后可能的“再见”&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/categories/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    
+    <category term="潇然工作室" scheme="https://xrgzs.github.io/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/"/>
+    
+    <category term="网站事务" scheme="https://xrgzs.github.io/tags/%E7%BD%91%E7%AB%99%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
@@ -590,15 +617,15 @@
     <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
     
     
+    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
+    
     <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
-    <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
     <category term="硬盘扩容" scheme="https://xrgzs.github.io/tags/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
     
     <category term="xfs" scheme="https://xrgzs.github.io/tags/xfs/"/>
-    
-    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
@@ -656,15 +683,15 @@
     <category term="Linux" scheme="https://xrgzs.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/linux/"/>
     
     
-    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
-    
     <category term="CentOS" scheme="https://xrgzs.github.io/tags/centos/"/>
     
-    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    <category term="Linux" scheme="https://xrgzs.github.io/tags/linux/"/>
     
     <category term="证书" scheme="https://xrgzs.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
     
     <category term="curl" scheme="https://xrgzs.github.io/tags/curl/"/>
+    
+    <category term="服务器运维" scheme="https://xrgzs.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
