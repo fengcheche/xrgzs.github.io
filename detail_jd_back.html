@@ -4,35 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>茶里（chali）桂花乌龙茶叶原叶花草茶花茶茶包三角包袋泡茶 15袋/盒【图片 价格 品牌 评论】-天天小美</title>
-    <script src="//unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/js/axios.config.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-            $(function () {
-               var prodId = getUrlParam('p');
-                axios({
-                    url:'/prod/prodInfo?prodId='+prodId,
-                    method:'get',
-                    header:{
-                        'Content-Type':'application/json'
-                    }
-                }).then(resp =>{
-                    this.loginLoading = false
-                    if(resp.data.code == okCode){
-                        var prod = resp.data.data;
-                        $('#pName').html(prod.prodName);
-                        $('#pPic').attr('src',prod.pic);
-                        $('#pBrief').html(prod.brief);
-                        $('#pPrice').html(prod.price);
-                        $('#pContent').html(prod.content);
-                        $('#oriPrice').html("¥"+prod.oriPrice);
-                    }else{
-                        this.$message.error(resp.data.msg);
-                    }
-                });
-            });
-    </script>
+    <title>茶里（chali）桂花乌龙茶叶原叶花草茶花茶茶包三角包袋泡茶 15袋/盒【图片 价格 品牌 评论】-京东</title>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
     <style>
         *{
             margin: 0px;
@@ -481,7 +454,7 @@
         }
         .fcon{
             width: 100%;
-            height: 20px;
+            height: 70px;
             background-color: #fafafa;
             position: relative;
         }
@@ -600,7 +573,7 @@
             color: #fff;
         }
         .fleft{
-            width: 36%;
+            width: 39%;
             height: 38px;
             float: left;
             background: linear-gradient(135deg,#f2140c,#f2270c 70%,#f24d0c);
@@ -613,7 +586,7 @@
             text-align: center;
         }
         .fright{
-            width: 36%;
+            width: 39%;
             height: 38px;
             float: right;
             background:linear-gradient(135deg,#ffba0d,#ffc30d 69%,#ffcf0d);
@@ -642,21 +615,21 @@
 <body>
     <div class="head">
         <header>
-            <img src="images/home.png" alt="首页" >
-            <img src="images/more.png" alt="分享">
+            <img src="images/home.png" alt="">
+            <img src="images/more.png" alt="">
         </header>
     </div>
     <div class="banner">
         <div class="inner">
-            <img class="iimg" id="pPic" src="" alt="" style="width: 400px;height: 400px;">
-<!--            <div class="dplay">-->
-<!--                <img src="images/play.png" alt="">-->
-<!--                <span>00′22″</span>-->
-<!--            </div>-->
-<!--            <div class="pages"> -->
-<!--                <span>1&nbsp;</span>-->
-<!--                /6-->
-<!--            </div>-->
+            <img class="iimg" src="https://m.360buyimg.com/mobilecms/s750x750_jfs/t1/183851/30/13806/104994/60ed09cdE5ab7435b/454e02707a2abd34.jpg!q80.dpg.webp" alt="">
+            <div class="dplay">
+                <img src="images/play.png" alt="">
+                <span>00′22″</span>
+            </div>
+            <div class="pages"> 
+                <span>1&nbsp;</span>
+                /6
+            </div>
         </div>
     </div>
     <div class="contenter">
@@ -664,125 +637,123 @@
             <!-- <img src="images/price.png" alt=""> -->
             <div class="price-num">
                 <div class="now-price">
-                    ¥<em id="pPrice"></em>
+                    ¥<em>45</em>.00
                 </div>
-                <del class="before" id="oriPrice">¥49.00</del>
+                <del class="before">¥49.00</del>
             </div>
             <div class="time">
-                <p>商品特价</p>
+                <p>距结束还剩</p>
             </div>
         </div>
     </div>
     <div class="wraper">
         <div class="wrap">
             <div class="wrap-head">
-<!--                <img src="images/market.png" alt="">-->
-<!--                <p>一站式囤生活好物</p>-->
+                <img src="images/market.png" alt="">
+                <p>一站式囤生活好物</p>
             </div>
             <div class="wrap-ban">
-<!--                <img src="images/self.png" alt="">-->
-                <div id="pName">
+                <img src="images/self.png" alt="">
                 茶里（chali）桂花乌龙茶叶原叶花草茶花茶茶包三角包袋泡茶 15袋/盒
-                </div>
             </div>
             <div class="liking">
                 <img src="images/like.png" alt="">
                 <br>
                 收藏
             </div>
-            <div class="show" id="pBrief">
-                    【吴裕泰品牌日】限时直降，爆款好茶，多重优惠。镇店款口粮茶，老客必囤，2件9折，消暑一夏，戳戳》推广
+            <div class="show">
+                    【吴裕泰品牌日】限时直降，爆款好茶，多重优惠。镇店款口粮茶，老客必囤，2件9折，消暑一夏，戳戳》推广 
                     <a href="">查看></a>
             </div>
         </div>
     </div>
-<!--    <div class="count">-->
-<!--        <div class="count-banner">-->
-<!--            <div class="count-t1">-->
-<!--                <p>满199享8.5折</p>-->
-<!--                <p>满99减10</p>-->
-<!--            </div>-->
-<!--            <div class="count-t2">-->
-<!--                <p>多买优惠</p>-->
-<!--                <p>满2件，总价打9折</p>-->
-<!--            </div>-->
-<!--            <div class="count-t3">-->
-<!--                <p>换购</p>-->
-<!--                <p>购买1件可优惠换购热销商品</p>-->
-<!--            </div>-->
-<!--            <div class="count-t4">-->
-<!--                <p>满额返券</p>-->
-<!--                     <p>购母婴医药清洁食品酒水生鲜个护玩具乐器汽车鲜花农资园艺部分自营商品满1元返券包</p>-->
-<!--            </div>-->
-<!--            <span class="bspan">优惠</span>-->
-<!--            <img src="images/pot3.png" alt="">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="floof">-->
-<!--        <div class="fban">-->
-<!--            <div class="fban-t1">-->
-<!--                <span>已选</span>-->
-<!--                <p>桂花乌龙茶，1个</p>-->
-<!--                <img src="images/pot3.png" alt="">-->
-<!--            </div>-->
-<!--            <div class="fban-t2">-->
-<!--                <span>送至</span>-->
-<!--                <p>北京朝阳区三环到四环之间</p>-->
-<!--                <p class="tip">-->
-<!--                    <img src="images/road.png" alt="">-->
-<!--                    <span>现货</span>-->
-<!--                    23:00前下单，预计明天(07月17日)送达-->
-<!--                </p>-->
-<!--                <img src="images/pot3.png" alt="">-->
-<!--            </div>-->
-<!--            <div class="fban-t3">-->
-<!--                <span>重量</span>-->
-<!--                <p>0.095kg</p>-->
-<!--            </div>-->
-<!--        </div>-->
+    <div class="count">
+        <div class="count-banner">
+            <div class="count-t1">
+                <p>满199享8.5折</p>
+                <p>满99减10</p>
+            </div>
+            <div class="count-t2">
+                <p>多买优惠</p>
+                <p>满2件，总价打9折</p>
+            </div>
+            <div class="count-t3">
+                <p>换购</p>
+                <p>购买1件可优惠换购热销商品</p>
+            </div>
+            <div class="count-t4">
+                <p>满额返券</p>
+                     <p>购母婴医药清洁食品酒水生鲜个护玩具乐器汽车鲜花农资园艺部分自营商品满1元返券包</p>
+            </div>
+            <span class="bspan">优惠</span>
+            <img src="images/pot3.png" alt="">
+        </div>
+    </div>
+    <div class="floof">
+        <div class="fban">
+            <div class="fban-t1">
+                <span>已选</span>
+                <p>桂花乌龙茶，1个</p>
+                <img src="images/pot3.png" alt="">
+            </div>
+            <div class="fban-t2">
+                <span>送至</span>
+                <p>北京朝阳区三环到四环之间</p>
+                <p class="tip">
+                    <img src="images/road.png" alt="">
+                    <span>现货</span>
+                    23:00前下单，预计明天(07月17日)送达
+                </p>
+                <img src="images/pot3.png" alt="">
+            </div>
+            <div class="fban-t3">
+                <span>重量</span>
+                <p>0.095kg</p>
+            </div>
+        </div>
         <div class="fcon">
             <ul>
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    99元免基础运费</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    京东发货&商家售后</li>-->
+                <li>
+                    <img src="images/right.png" alt="">
+                    99元免基础运费</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    京东发货&商家售后</li>
                 <li>
                     <img src="images/tan.png" alt="">
-                    7天无理由退货</li>
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    次日达</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    京尊达</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    预约送货</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    部分收货</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    送货上门</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    茗茶无忧</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    破损包退换</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    上门换新</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    自提</li>-->
-<!--                <li>-->
-<!--                    <img src="images/right.png" alt="">-->
-<!--                    可配送港澳台</li>-->
+                    7天无理由退货（拆封后不支持）</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    次日达</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    京尊达</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    预约送货</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    部分收货</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    送货上门</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    茗茶无忧</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    破损包退换</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    上门换新</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    自提</li>
+                <li>
+                    <img src="images/right.png" alt="">
+                    可配送港澳台</li>
             </ul>
-<!--            <img src="images/pot3.png" alt="">-->
+            <img src="images/pot3.png" alt="">
         </div>
     </div>
     <div class="choice">
@@ -791,12 +762,20 @@
                 <img src="images/red.png" alt="">    
                 商品介绍
             </li>
-<!--            <li>规格参数</li>-->
-<!--            <li>售后保障</li>-->
+            <li>规格参数</li>
+            <li>售后保障</li>
         </ul>
     </div>
     <div class="piggy">
-        <div id="pContent" style="margin-top: 10px;"></div>
+        <div><img src="images/piggy1.jpg" alt=""></div>
+        <div><img src="images/piggy2.jpg" alt=""></div>
+        <div><img src="images/piggy3.jpg" alt=""></div>
+        <div><img src="images/piggy4.jpg" alt=""></div>
+        <div><img src="images/piggy5.jpg" alt=""></div>
+        <div><img src="images/piggy6.jpg" alt=""></div>
+        <div><img src="images/piggy7.jpg" alt=""></div>
+        <div><img src="images/piggy8.jpg" alt=""></div>
+        <div><img src="images/piggy9.jpg" alt=""></div>
     </div>
     <footer>
         <div class="foot-con">
@@ -804,8 +783,8 @@
             <span class="shop">店铺</span>
         </div>
         <div class="foot-con">
-                <img src="images/like.png" alt="">
-                <span class="dog">收藏</span>
+                <img src="images/dog.png" alt="">
+                <span class="dog">客服</span>
 
          </div>
         <div class="foot-con">
@@ -823,10 +802,10 @@
         </div>
 
     </footer>
-<!--    <div class="logo">-->
-<!--        <div class="pic">-->
-<!--            <img src="images/JDdog.png" alt="">-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="logo">
+        <div class="pic">
+            <img src="images/JDdog.png" alt="">
+        </div>
+    </div>
 </body>
 </html>
