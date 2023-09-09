@@ -1,0 +1,644 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="天天小美">
+    <meta name="description" content="天天小美">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <title>天天小美</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- index cover -->
+    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
+    <style>
+        .carousel-control {
+            width: 45px;
+            height: 45px;
+            line-height: 55px;
+            border-radius: 45px;
+            background: transparent;
+            cursor: pointer;
+            z-index: 100;
+        }
+        #prev-cover {
+            position: absolute;
+            top: 48%;
+            left: 8px;
+        }
+        #next-cover {
+            position: absolute;
+            top: 48%;
+            right: 8px;;
+        }
+        #prev-cover i {
+            margin-right: 3px;
+        }
+        #next-cover i {
+            margin-left: 3px;
+        }
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+        .carousel-control i {
+            color: #fff;
+            font-size: 2.4rem;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.bootcdn.net/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.bootcdn.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>-->
+<!--    <script>LA.init({id: "3EkoIokEjoCIrHFE", ck: "3EkoIokEjoCIrHFE", autoTrack: true})</script>-->
+<!--    <link rel="alternate" href="/atom.xml" title="天天小美" type="application/atom+xml">-->
+
+
+    <link rel="stylesheet" href="/js/pinterest/css/normalize.css">
+    <link rel="stylesheet" href="/js/pinterest/css/default.css">
+    <script src="/js/pinterest/js/pinterest_grid.js"></script>
+    <style type="text/css">
+        #gallery-wrapper {
+            position: relative;
+            max-width: 75%;
+            width: 75%;
+            margin:50px auto;
+        }
+        img.thumb {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        .white-panel {
+            position: absolute;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+            padding: 10px;
+        }
+        .white-panel h1 {
+            font-size: 1em;
+        }
+        /*.white-panel h1 a {*/
+        /*    color: #A92733;*/
+        /*}*/
+        .white-panel:hover {
+            box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+            margin-top: -5px;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="home.html" class="waves-effect waves-light">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <span class="logo-span">天天小美</span>
+                </a>
+            </div>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+            <ul class="right nav-menu">
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/txx.html" class="waves-effect waves-light">
+                        <i class="fas fa-solid fa-tree-city " style="zoom: 0.6;"></i>
+                        <span>休闲日常</span>
+<!--                        <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>-->
+                    </a>
+<!--                    <ul class="sub-nav menus_item_child ">-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-regular fa-calendar-days " style="margin-top: -20px; zoom: 0.6;"></i>-->
+<!--                                <span>工作日常</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-home" style="margin-top: -20px; zoom: 0.6;"></i>-->
+<!--                                <span>舒适居家</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-solid fa-champagne-glasses " style="margin-top: -20px; zoom: 0.6;"></i>-->
+<!--                                <span>小资情调</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+                </li>
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/tnh.html" class="waves-effect waves-light">
+                        <i class="fas fa-solid fa-school-flag  " style="zoom: 0.6;"></i>
+                        <span>年会晚宴</span>
+                    </a>
+                </li>
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/thw.html" class="waves-effect waves-light">
+                        <i class="fas fa-solid fa-person-skiing " style="zoom: 0.6;"></i>
+                        <span>户外运动</span>
+                    </a>
+                </li>
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/tzs.html" class="waves-effect waves-light">
+                        <i class="fas fa-solid fa-ribbon " style="zoom: 0.6;"></i>
+                        <span>中式国风</span>
+                    </a>
+                </li>
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/tdm.html" class="waves-effect waves-light">
+                        <i class="fas fa-solid fa-piggy-bank " style="zoom: 0.6;"></i>
+                        <span>动漫</span>
+                    </a>
+                </li>
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/tss.html" class="waves-effect waves-light">
+                        <i class="fa-solid fa-house-user " style="zoom: 0.6;"></i>
+                        <span>舒适居家</span>
+                    </a>
+                </li>
+                <li class="hide-on-med-and-down nav-item">
+                    <a href="/thjm.html" class="waves-effect waves-light">
+                        <i class="fas fa-solid fa-dog " style="zoom: 0.6;"></i>
+                        <span>哈基米</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/category/category" target="_blank" class="modal-trigger waves-effect waves-light">
+                        <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+                    </a>
+                </li>
+<!--                <li>-->
+<!--                    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()"-->
+<!--                       title="深色/浅色模式">-->
+<!--                        <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
+                <li class="hide-on-med-and-down nav-item" id="loginLi">
+                    <a href="/pages/accountLogin/accountLogin" class="waves-effect waves-light">
+                        <i class="fas fa-user" style="zoom: 0.6;"></i>
+                        <span>登录</span>
+                    </a>
+                </li>
+                <li class="hide-on-med-and-down nav-item" id="userLi" style="cursor: pointer;">
+                    <a href="/pages/user/user">
+                    <img src="medias/avatar.png" id="userImg" style="margin-top:5px;arwidth: 50px;height: 50px;"/>
+                    </a>
+                </li>
+            </ul>
+            <div id="mobile-nav" class="side-nav sidenav">
+                <div class="mobile-head bg-color">
+                    <a href="/pages/user/user" style="cursor: pointer">
+                    <img src="/medias/avatar.png" class="logo-img circle responsive-img" id="userImgMobile">
+                    </a>
+                    <div class="logo-name">天天小美</div>
+                    <div class="logo-desc">
+                        美丽生活每一天
+                    </div>
+                </div>
+                <ul class="menu-list mobile-menu-list">
+                    <li class="m-nav-item">
+                        <a href="/txx.html">
+                            <i class="fa-fw fa-solid fa-tree-city "></i>
+                            休闲日常
+<!--                            <span class="m-icon"><i class="fas fa-chevron-right"></i></span>-->
+                        </a>
+<!--                        <ul style="background:  ;">-->
+<!--                            <li>-->
+<!--                                <a href="# " style="margin-left:75px">-->
+<!--                                    <i class="fa fas fa-regular fa-calendar-days " style="position: absolute;left:50px"></i>-->
+<!--                                    <span>工作日常</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="# " style="margin-left:75px">-->
+<!--                                    <i class="fa fas fa-home" style="position: absolute;left:50px"></i>-->
+<!--                                    <span>舒适居家</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="# " style="margin-left:75px">-->
+<!--                                    <i class="fa fa-solid fa-champagne-glasses " style="position: absolute;left:50px"></i>-->
+<!--                                    <span>小资情调</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/tnh.html" class="waves-effect waves-light">
+                            <i class="fa-fw fas fa-school-flag "></i>
+                            年会晚宴
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/thw.html" class="waves-effect waves-light">
+                            <i class="fa-fw fas fa-person-skiing "></i>
+                            户外运动
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/tzs.html" class="waves-effect waves-light">
+                            <i class="fa-fw fas fa-solid fa-ribbon "></i>
+                            中式国风
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/tdm.html" class="waves-effect waves-light">
+                            <i class="fa-fw fas fa-solid fa-piggy-bank "></i>
+                            动漫
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/tss.html" class="waves-effect waves-light">
+                            <i class="fa-fw fa-solid fa-house-user "></i>
+                            舒适居家
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/thjm.html" class="waves-effect waves-light">
+                            <i class="fa-fw fa-solid fa-dog "></i>
+                            哈基米
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/pages/accountLogin/accountLogin" class="waves-effect waves-light" id="loginLiMobile">
+                            <i class="fa-fw fas fa-user"></i>
+                            登录
+                        </a>
+                    </li>
+                    <li class="m-nav-item">
+                        <a href="/pages/user/user" class="waves-effect waves-light" id="mySelft">
+                            <i class="fa-fw fas fa-user"></i>
+                            我的
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+    <div id="prev-cover" class="left waves-effect carousel-control">
+        <i class="icon fa fa-angle-left"></i>
+    </div>
+    <div id="next-cover" class="right waves-effect carousel-control">
+        <i class="icon fa fa-angle-right"></i>
+    </div>
+    <div class="carousel-item  white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+                    <div class="brand">
+                        <div class="title center-align">
+                            天天小美
+                        </div>
+                        <div class="description center-align">
+                            <span id="subtitle"></span>
+                            <script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+                            <script>
+                                var typed = new Typed("#subtitle", {
+                                    strings: [
+                                        "美丽生活每一天",
+                                        "Beauty every day",
+                                    ],
+                                    startDelay: 300,
+                                    typeSpeed: 100,
+                                    loop: true,
+                                    backSpeed: 50,
+                                    showCursor: true
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // 每天切换 banner 图.  Switch banner image every day.
+                // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+                var bannerUrl = 'https://t.mwm.moe/moez';
+                // $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+                $('.bg-cover').css('background-image', 'url(/medias/banner/portal/pro1.jpg)');
+            </script>
+            <div class="cover-btns">
+                <a href="#product" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+            </div>
+            <div class="cover-social-link">
+<!--                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"-->
+<!--                   data-position="top" data-delay="50">-->
+<!--                    <i class="fab fa-github"></i>-->
+<!--                </a>-->
+                <a href="mailto:fc6029585@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+                   data-position="top" data-delay="50">
+                    <i class="fas fa-envelope-open"></i>
+                </a>
+                <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=421160896" class="tooltipped"
+                   target="_blank" data-tooltip="QQ联系我: 421160896" data-position="top" data-delay="50">
+                    <i class="fab fa-qq"></i>
+                </a>
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+                   data-delay="50">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+         style="background-image: url('/medias/banner/portal/pro2.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">一起探寻我们的宝藏</div>
+                    <div class="description center-align">
+                        Together we seek the treasure that belongs to us
+                    </div>
+                    <div class="cover-btns">
+                        <a href="#product" class="waves-effect waves-light btn"
+                           >
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+         style="background-image: url('/medias/banner/portal/pro3.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">灿烂绽放</div>
+                    <div class="description center-align">
+                        Brilliant bloom
+                    </div>
+                    <div class="cover-btns">
+                        <a href="#product" class="waves-effect waves-light btn"
+                           >
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        let coverSlider = $('.carousel');
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+        coverSlider.carousel({
+            duration: Number('120'),
+            fullWidth: true,
+            indicators: 'true' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
+        let carouselIntervalId;
+        // Loop to call the next cover article picture.
+        let autoCarousel = function () {
+            carouselIntervalId = setInterval(function () {
+                coverSlider.carousel('next');
+            }, 5000);
+        };
+        autoCarousel();
+        function restartPlay() {
+            clearInterval(carouselIntervalId);
+            autoCarousel();
+        };
+        // prev and next cover post.
+        $('#prev-cover').click(function () {
+            coverSlider.carousel('prev');
+            restartPlay();
+        });
+        $('#next-cover').click(function () {
+            coverSlider.carousel('next');
+            restartPlay();
+        });
+    });
+</script>
+<section id="gallery-wrapper">
+</section>
+<footer class="page-footer bg-color">
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l7 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2017-2023</span>
+            <a href="javascript:void(0)" >fangcheng</a>
+            <br>
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">90.2k</span>
+            <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            <br>
+            <span id="SSL">
+                    我是一个做了十七年开发的程序员，可以制作网站、后端应用</br>
+                    小程序、手机端、PPT的制作都没问题，会一点视频和图片处理</br>
+                    欢迎大伙联系交流
+<!--                本站支持&nbsp;<a href="https://ipw.cn/ipv6webcheck/?site=www.xrgzs.top" target='_blank'>IPv6</a>&nbsp;访问-->
+<!--                |&nbsp;本站支持&nbsp;<a href="https://ipw.cn/ssl/?site=www.xrgzs.top" target='_blank'>SSL安全</a>&nbsp;访问-->
+            </span>
+            <!-- 运行天数提醒. -->
+            <br></br>
+        </div>
+        <div class="col s12 m3 l3 social-link social-statis">
+<!--            <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"-->
+<!--               data-position="top" data-delay="50">-->
+<!--                <i class="fab fa-github"></i>-->
+<!--            </a>-->
+            <a href="mailto:fc6029585@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+               data-position="top" data-delay="50">
+                <i class="fas fa-envelope-open"></i>
+            </a>
+            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=421160896" class="tooltipped"
+               target="_blank" data-tooltip="QQ联系我: 421160896" data-position="top" data-delay="50">
+                <i class="fab fa-qq"></i>
+            </a>
+            <a href="javascript:" class="tooltipped"
+               data-tooltip="微信联系我: 13668256964" data-position="top" data-delay="50">
+                <i class="fab fa-weixin"></i>
+            </a>
+            <a href="javascript:" class="tooltipped"
+               data-tooltip="电话联系我: 13668256964" data-position="top" data-delay="50">
+                <i class="fa-solid fa-phone "></i>
+            </a>
+
+        </div>
+        <div class="col s12 m3 l2 social-link social-statis">
+            <a href="javascript:" class="tooltipped" data-tooltip="微信扫描联系我" >
+                <img src="medias/images/qrcode/weichart.png" style="width: 100px;height: 100px;margin-bottom: 20px;">
+            </a>
+        </div>
+    </div>
+</footer>
+<div class="progress-bar"></div>
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#gallery-wrapper").pinterest_grid({
+            no_columns: 4,   // 网格布局一行的列数。默认值为一行3个网格
+            padding_x: 10,   // 网格在X轴方向的padding值。默认值为10像素
+            padding_y: 10,   // 网格在Y轴方向的padding值。默认值为10像素
+            margin_bottom: 50,   // 网格底部的margin值。默认值为50像素
+            single_column_breakpoint: 700  // 指定在视口多大时一行只显示一个网格
+        });
+    });
+
+
+    $(function () {
+        //init
+        var isLogin = getCookie(AuthorizationName);
+        if(isLogin!=null){
+            var avatar= getCookie(avatarName);
+            if(avatar && avatar.length > 0 ){
+                $('#userImg').attr('src',ttxiameiImg+avatar);
+                $('#userImgMobile').attr('src',ttxiameiImg+avatar);
+            }
+            $('#loginLi').hide();
+            $('#loginLiMobile').hide();
+        }else{
+            $('#userLi').hide();
+            $('#userImg').hide();
+            $('userImgMobile').hide();
+        }
+        queryProd();
+    });
+    function queryProd(categoryId){
+        var url = '/prod/pageProd?size=30';
+        if(categoryId){
+            url+='&categoryId='+categoryId;
+        }
+        axios({
+            url:url,
+            method:'get',
+            header:{
+                'Content-Type':'application/json'
+            }
+        }).then(resp =>{
+            if(resp.data.code == okCode){
+                var datas = resp.data.data.records;
+                for( index in datas){
+                    appendProd(datas[index].prodName,datas[index].pic,datas[index].prodId);
+                }
+            }else{
+                this.$message.error(resp.data.msg);
+            }
+        });
+    }
+    function appendProd(title,url,prodId){
+        //var html = '<div class="article col " data-aos="zoom-in"> <div class="card"> <a href="product_detail.html?p='+prodId+'" target="_blank"> <div class="card-image"> <img src="'+url+'" class="responsive-img" > </div> </a> <div class="card-content article-content"> <div class="summary block-with-text"> '+title+' </div> </div> </div> </div>';
+        var html = '<article class="white-panel" style="cursor: pointer"><a target="_blank" href="pages/prod/prod?prodid='+prodId+'"><img src="'+url+'" class="thumb"><h1>'+title+'</h1></a></article>';//<p>Description 10</p>
+        $('#gallery-wrapper').append(html);
+    }
+</script>
+<!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+</div>
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+            setTimeout(function () {
+                $('body').hasClass('DarkMode')
+                    ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon'))
+                    : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+                    setTimeout(function () {
+                        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                            $(this).remove()
+                        })
+                    }, 2e3)
+            })
+    }
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/lightgallery/1.10.0/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script src="//unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/axios.config.js"></script>
+<script type="text/javascript">
+    var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+    var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+    var cookieDomain = "https://###.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+    var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+    var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+    var translateButtonId = "translateLink"; //默认互换id
+    translateInitilization();
+</script>
+<!-- 雪花特效 -->
+<!-- 鼠标星星特效 -->
+<!-- Baidu Analytics -->
+<!-- Baidu Push -->
+<script async src="https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script>
+<!--腾讯兔小巢-->
+<!--背景动态画线-->
+<!--    <script type="text/javascript" color="0,0,255"-->
+<!--        pointColor="0,0,255" opacity='0.7'-->
+<!--        zIndex="-1" count="99"-->
+<!--        src="/libs/background/canvas-nest.js"></script>-->
+<script src="/libs/instantpage/instantpage.js" type="module"></script>
+</body>
+</html>
