@@ -526,13 +526,11 @@
 
     $(function () {
         //init
-        var isLogin = getCookie(AuthorizationName);
-        if(isLogin!=null){
-            var avatar= getCookie(avatarName);
-            if(avatar && avatar.length > 0 ){
-                $('#userImg').attr('src',ttxiameiImg+avatar);
-                $('#userImgMobile').attr('src',ttxiameiImg+avatar);
-            }
+        var token = getCookie(AuthorizationName);
+        if(token!=null){
+            window.localStorage.setItem("token",token);
+            $('#userImg').attr('src',ttxiameiAvatar);
+            $('#userImgMobile').attr('src',ttxiameiAvatar);
             $('#loginLi').hide();
             $('#loginLiMobile').hide();
         }else{

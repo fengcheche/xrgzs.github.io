@@ -1,5 +1,6 @@
 axios.defaults.baseURL = 'http://ttxiaomei.com/api/'
 ttxiameiImg='http://ttxiaomei.com/mall/img/'
+ttxiameiAvatar = 'http://ttxiaomei.com/medias/avatar.png'
 okCode='00000';
 avatarName='avatar';
 AuthorizationName='Authorization';
